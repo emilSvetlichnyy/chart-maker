@@ -1,21 +1,23 @@
 const COLORS = [
-  "#0f7a6c",
-  "#d9773a",
-  "#2f5d8c",
-  "#b44d6a",
-  "#6b8f3a",
-  "#7a5caf",
+  "#0f766e",
+  "#c2410c",
+  "#1d4ed8",
+  "#be123c",
+  "#3f6212",
+  "#6d28d9",
 ];
 
 function parseRows(container) {
-  return [...container.querySelectorAll(".row")].map((row) => {
-    const label = row.querySelector('[data-field="label"]').value.trim();
-    const value = Number(row.querySelector('[data-field="value"]').value);
-    return {
-      label: label || "Без названия",
-      value: Number.isFinite(value) ? Math.max(0, value) : 0,
-    };
-  }).filter((item) => item.value > 0);
+  return [...container.querySelectorAll(".row")]
+    .map((row) => {
+      const label = row.querySelector('[data-field="label"]').value.trim();
+      const value = Number(row.querySelector('[data-field="value"]').value);
+      return {
+        label: label || "Untitled",
+        value: Number.isFinite(value) ? Math.max(0, value) : 0,
+      };
+    })
+    .filter((item) => item.value > 0);
 }
 
 function drawPie(canvas, data) {
@@ -31,10 +33,10 @@ function drawPie(canvas, data) {
 
   const total = data.reduce((sum, item) => sum + item.value, 0);
   if (!total) {
-    ctx.fillStyle = "#6b7c88";
-    ctx.font = "15px Figtree, sans-serif";
+    ctx.fillStyle = "#6b7280";
+    ctx.font = "15px DM Sans, sans-serif";
     ctx.textAlign = "center";
-    ctx.fillText("Добавьте числа", size / 2, size / 2);
+    ctx.fillText("Add numbers", size / 2, size / 2);
     return [];
   }
 
@@ -63,18 +65,18 @@ function drawPie(canvas, data) {
   });
 
   ctx.beginPath();
-  ctx.fillStyle = "#fbfcfb";
+  ctx.fillStyle = "#fcfdff";
   ctx.arc(cx, cy, inner, 0, Math.PI * 2);
   ctx.fill();
 
-  ctx.fillStyle = "#152028";
-  ctx.font = "700 22px Syne, sans-serif";
+  ctx.fillStyle = "#111827";
+  ctx.font = "650 22px Fraunces, serif";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
   ctx.fillText(String(total), cx, cy - 8);
-  ctx.fillStyle = "#6b7c88";
-  ctx.font = "12px Figtree, sans-serif";
-  ctx.fillText("сумма", cx, cy + 12);
+  ctx.fillStyle = "#6b7280";
+  ctx.font = "12px DM Sans, sans-serif";
+  ctx.fillText("total", cx, cy + 12);
 
   return legend;
 }
@@ -92,10 +94,10 @@ function drawBar(canvas, data) {
   ctx.clearRect(0, 0, width, height);
 
   if (!data.length) {
-    ctx.fillStyle = "#6b7c88";
-    ctx.font = "15px Figtree, sans-serif";
+    ctx.fillStyle = "#6b7280";
+    ctx.font = "15px DM Sans, sans-serif";
     ctx.textAlign = "center";
-    ctx.fillText("Добавьте числа", width / 2, height / 2);
+    ctx.fillText("Add numbers", width / 2, height / 2);
     return [];
   }
 
@@ -105,6 +107,7 @@ function drawBar(canvas, data) {
   const plotH = height - pad.top - pad.bottom;
   const gap = 10;
   const barW = (plotW - gap * (data.length - 1)) / data.length;
+  const sum = data.reduce((s, i) => s + i.value, 0);
   const legend = [];
 
   data.forEach((item, index) => {
@@ -114,22 +117,27 @@ function drawBar(canvas, data) {
     const y = pad.top + plotH - h;
     ctx.fillStyle = color;
     ctx.beginPath();
-    ctx.roundRect(x, y, barW, h, [8, 8, 2, 2]);
+    if (ctx.roundRect) {
+      ctx.roundRect(x, y, barW, h, [8, 8, 2, 2]);
+    } else {
+      ctx.rect(x, y, barW, h);
+    }
     ctx.fill();
 
-    ctx.fillStyle = "#3d4f5c";
-    ctx.font = "11px Figtree, sans-serif";
+    ctx.fillStyle = "#4b5563";
+    ctx.font = "11px DM Sans, sans-serif";
     ctx.textAlign = "center";
-    const label = item.label.length > 10 ? `${item.label.slice(0, 9)}…` : item.label;
+    const label =
+      item.label.length > 10 ? `${item.label.slice(0, 9)}…` : item.label;
     ctx.fillText(label, x + barW / 2, height - 28);
-    ctx.fillStyle = "#152028";
-    ctx.font = "650 12px Figtree, sans-serif";
+    ctx.fillStyle = "#111827";
+    ctx.font = "650 12px DM Sans, sans-serif";
     ctx.fillText(String(item.value), x + barW / 2, y - 6);
 
     legend.push({
       ...item,
       color,
-      pct: Math.round((item.value / data.reduce((s, i) => s + i.value, 0)) * 100),
+      pct: Math.round((item.value / sum) * 100),
     });
   });
 
@@ -137,6 +145,7 @@ function drawBar(canvas, data) {
 }
 
 function renderLegend(table, legend) {
+  if (!table) return;
   const body = legend
     .map(
       (item) => `
@@ -157,25 +166,34 @@ function downloadCanvas(canvas, name) {
   link.click();
 }
 
-function bindTool({ type, rowsId, canvasId, legendId, addBtnId, downloadBtnId, totalId }) {
+function bindTool({
+  type,
+  rowsId,
+  canvasId,
+  legendId,
+  addBtnId,
+  downloadBtnId,
+  totalId,
+}) {
   const rows = document.getElementById(rowsId);
   const canvas = document.getElementById(canvasId);
   const legend = document.getElementById(legendId);
   const addBtn = document.getElementById(addBtnId);
   const downloadBtn = document.getElementById(downloadBtnId);
   const totalEl = document.getElementById(totalId);
+  if (!rows || !canvas) return;
 
   function rowTemplate(label = "", value = "") {
     const el = document.createElement("div");
     el.className = "row";
     el.innerHTML = `
-      <label>Название
-        <input data-field="label" type="text" value="${label}" placeholder="Сектор">
+      <label>Label
+        <input data-field="label" type="text" value="${label}" placeholder="Category">
       </label>
-      <label>Значение
+      <label>Value
         <input data-field="value" type="number" min="0" step="any" value="${value}" placeholder="0">
       </label>
-      <button type="button" class="btn btn-ghost" data-remove>Удалить</button>
+      <button type="button" class="btn btn-ghost" data-remove>Remove</button>
     `;
     return el;
   }
@@ -185,7 +203,7 @@ function bindTool({ type, rowsId, canvasId, legendId, addBtnId, downloadBtnId, t
     const drawn = type === "bar" ? drawBar(canvas, data) : drawPie(canvas, data);
     renderLegend(legend, drawn);
     const total = data.reduce((sum, item) => sum + item.value, 0);
-    if (totalEl) totalEl.textContent = `Сумма: ${total}`;
+    if (totalEl) totalEl.textContent = `Total: ${total}`;
     [...rows.querySelectorAll("[data-remove]")].forEach((btn) => {
       btn.disabled = rows.querySelectorAll(".row").length <= 2;
     });
@@ -202,7 +220,9 @@ function bindTool({ type, rowsId, canvasId, legendId, addBtnId, downloadBtnId, t
 
   addBtn?.addEventListener("click", () => {
     if (rows.querySelectorAll(".row").length >= 8) return;
-    rows.appendChild(rowTemplate(`Сектор ${rows.querySelectorAll(".row").length + 1}`, "10"));
+    rows.appendChild(
+      rowTemplate(`Item ${rows.querySelectorAll(".row").length + 1}`, "10")
+    );
     refresh();
   });
 

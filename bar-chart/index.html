@@ -1,131 +1,170 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Столбчатая диаграмма онлайн — бесплатно | VIA</title>
-  <meta name="description" content="Сделайте столбчатую диаграмму онлайн: сравните значения по категориям, скачайте PNG или откройте в приложении VIA.">
+  <title>Bar Chart Maker Online — Free | VIA</title>
+  <meta name="description" content="Make a bar chart online to compare categories. Enter values, preview instantly, download a PNG, or continue in the VIA app on iPhone.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;550;650;700&family=Syne:wght@600;700;750&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,550;9..40,650;9..40,700&family=Fraunces:opsz,wght@9..144,550;9..144,650&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
   <div class="wrap">
     <header class="site-nav">
-      <a class="brand" href="../">VIA <span>chart maker</span></a>
-      <nav class="nav-links" aria-label="Разделы">
-        <a href="../pie-chart/">Круговая</a>
-        <a href="./" aria-current="page">Столбчатая</a>
-        <a href="../from-table/">Из таблицы</a>
-        <a href="../on-phone/">На телефоне</a>
+      <a class="brand" href="../">VIA <small>chart maker</small></a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="../pie-chart/">Pie</a>
+        <a href="./" aria-current="page">Bar</a>
+        <a href="../from-table/">From table</a>
+        <a href="../on-phone/">On phone</a>
       </nav>
     </header>
 
     <main>
       <section class="hero">
-        <p class="eyebrow">Онлайн-инструмент</p>
-        <h1>Столбчатая диаграмма онлайн</h1>
+        <p class="eyebrow">Compare · online maker</p>
+        <h1>Bar chart maker online</h1>
         <p class="lead">
-          Сравните значения по категориям за минуту. Введите числа — график
-          обновится сразу. Удобно с телефона.
+          A bar chart compares values across categories. Enter each label and
+          number below for a live preview — then download a PNG or open VIA when
+          you want phone-side edits and more chart types.
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152">
-            Открыть в приложении
-          </a>
-          <button class="btn btn-secondary" type="button" id="downloadBtn">Скачать картинку</button>
+          <a class="btn btn-primary" href="#maker">Make my bar chart</a>
+          <a class="btn btn-secondary" href="https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152">Open in VIA</a>
         </div>
       </section>
 
-      <section class="panel">
-        <h2>Сделайте диаграмму сейчас</h2>
-        <p class="hint">Каждая строка — один столбец на графике.</p>
-        <div class="rows" id="rows">
-          <div class="row">
-            <label>Название
-              <input data-field="label" type="text" value="Янв">
-            </label>
-            <label>Значение
-              <input data-field="value" type="number" min="0" step="any" value="12">
-            </label>
-            <button type="button" class="btn btn-ghost" data-remove>Удалить</button>
+      <section class="widget" id="maker">
+        <div class="widget-top">
+          <div>
+            <h2>Bar chart planner</h2>
+            <p class="hint">Each row becomes one bar. Keep labels short so they stay readable on mobile.</p>
           </div>
-          <div class="row">
-            <label>Название
-              <input data-field="label" type="text" value="Фев">
-            </label>
-            <label>Значение
-              <input data-field="value" type="number" min="0" step="any" value="18">
-            </label>
-            <button type="button" class="btn btn-ghost" data-remove>Удалить</button>
+          <span class="badge">Live preview</span>
+        </div>
+        <div class="widget-grid split">
+          <div>
+            <div class="rows" id="rows">
+              <div class="row">
+                <label>Label<input data-field="label" type="text" value="Jan"></label>
+                <label>Value<input data-field="value" type="number" min="0" step="any" value="12"></label>
+                <button type="button" class="btn btn-ghost" data-remove>Remove</button>
+              </div>
+              <div class="row">
+                <label>Label<input data-field="label" type="text" value="Feb"></label>
+                <label>Value<input data-field="value" type="number" min="0" step="any" value="18"></label>
+                <button type="button" class="btn btn-ghost" data-remove>Remove</button>
+              </div>
+              <div class="row">
+                <label>Label<input data-field="label" type="text" value="Mar"></label>
+                <label>Value<input data-field="value" type="number" min="0" step="any" value="15"></label>
+                <button type="button" class="btn btn-ghost" data-remove>Remove</button>
+              </div>
+              <div class="row">
+                <label>Label<input data-field="label" type="text" value="Apr"></label>
+                <label>Value<input data-field="value" type="number" min="0" step="any" value="22"></label>
+                <button type="button" class="btn btn-ghost" data-remove>Remove</button>
+              </div>
+            </div>
+            <div class="toolbar">
+              <button class="btn btn-secondary" type="button" id="addBtn">Add bar</button>
+              <button class="btn btn-secondary" type="button" id="downloadBtn">Download PNG</button>
+              <span class="meta" id="totalMeta">Total: 0</span>
+            </div>
           </div>
-          <div class="row">
-            <label>Название
-              <input data-field="label" type="text" value="Мар">
-            </label>
-            <label>Значение
-              <input data-field="value" type="number" min="0" step="any" value="15">
-            </label>
-            <button type="button" class="btn btn-ghost" data-remove>Удалить</button>
-          </div>
-          <div class="row">
-            <label>Название
-              <input data-field="label" type="text" value="Апр">
-            </label>
-            <label>Значение
-              <input data-field="value" type="number" min="0" step="any" value="22">
-            </label>
-            <button type="button" class="btn btn-ghost" data-remove>Удалить</button>
+          <div>
+            <div class="chart-box">
+              <canvas id="chart" width="320" height="260" aria-label="Bar chart"></canvas>
+            </div>
+            <table class="legend" id="legend">
+              <thead><tr><th>Category</th><th>Value</th><th>Share</th></tr></thead>
+              <tbody></tbody>
+            </table>
           </div>
         </div>
-        <div class="toolbar">
-          <button class="btn btn-secondary" type="button" id="addBtn">Добавить столбец</button>
-          <span class="meta" id="totalMeta">Сумма: 0</span>
+        <div class="chips">
+          <span class="chip"><b>Compare</b> · best for side-by-side sizes</span>
+          <span class="chip"><b>Order</b> · sort if rank matters</span>
+          <span class="chip"><b>Shares?</b> · use a <a href="../pie-chart/">pie</a> instead</span>
         </div>
-      </section>
-
-      <section class="panel">
-        <h2>Результат</h2>
-        <div class="chart-box">
-          <canvas id="chart" width="320" height="260" aria-label="Столбчатая диаграмма"></canvas>
-        </div>
-        <table class="legend" id="legend">
-          <thead>
-            <tr>
-              <th>Категория</th>
-              <th>Значение</th>
-              <th>Доля</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
       </section>
 
       <section class="section">
-        <h2>Когда нужна столбчатая</h2>
-        <p>
-          Когда важно сравнить величины: месяцы, регионы, товары, оценки.
-          Если нужно показать доли от 100% — лучше
-          <a href="../pie-chart/">круговая диаграмма</a>.
-        </p>
+        <div class="section-head">
+          <h2>Before you start</h2>
+          <p>What can change whether a bar chart is the right choice.</p>
+        </div>
+        <div class="callouts">
+          <div class="callout">Use bars when the question is “which is bigger?” across months, regions, or products.</div>
+          <div class="callout">Start the value axis at zero when you can — truncated axes exaggerate differences.</div>
+          <div class="callout">If categories are parts of one total, a <a href="../pie-chart/">pie chart</a> may tell the story faster.</div>
+        </div>
       </section>
 
-      <section class="section faq">
-        <h2>Частые вопросы</h2>
-        <details>
-          <summary>Можно ли скачать график?</summary>
-          <p>Да — кнопка «Скачать картинку» сохраняет PNG.</p>
+      <section class="section prose">
+        <h2>Build a practical comparison</h2>
+        <p>
+          Bar charts shine when readers scan for highs and lows. Keep the set
+          focused, label clearly, and export when the ranking is obvious —
+          homework, standup updates, and quick reports included.
+        </p>
+        <div class="prose-grid">
+          <article class="prose-card">
+            <h3>Same units everywhere</h3>
+            <p>Don’t mix currencies, percentages, and counts on one axis without saying so.</p>
+          </article>
+          <article class="prose-card">
+            <h3>Short category names</h3>
+            <p>Long labels wrap badly on phones. Abbreviate, then explain in a caption if needed.</p>
+          </article>
+          <article class="prose-card">
+            <h3>Highlight the takeaway</h3>
+            <p>If one bar is the point, say it in the title: “April led sales” beats “Chart 1”.</p>
+          </article>
+          <article class="prose-card">
+            <h3>Continue in VIA</h3>
+            <p>Need line charts, saved projects, or faster phone edits? Jump to the App Store build.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section faq" id="questions">
+        <div class="section-head">
+          <h2>Questions</h2>
+          <p>Short answers for the exact search intent.</p>
+        </div>
+        <details open>
+          <summary>When should I use a bar chart instead of a pie?</summary>
+          <p>Use a bar chart to compare amounts. Use a pie when you care about shares of one whole.</p>
         </details>
         <details>
-          <summary>Есть ли приложение на iPhone?</summary>
-          <p>Да, VIA в App Store: правки, типы графиков и сохранение на устройстве.</p>
+          <summary>Can I download the bar chart?</summary>
+          <p>Yes — use Download PNG on this page, or export from VIA on iPhone.</p>
         </details>
+        <details>
+          <summary>Does VIA support more chart types?</summary>
+          <p>Yes. The app includes pie, bar, line, and more editing controls than this lightweight browser tool.</p>
+        </details>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>Related VIA pages</h2>
+        </div>
+        <div class="hub-grid">
+          <a class="hub-link" href="../pie-chart/">Pie chart maker <span>→</span></a>
+          <a class="hub-link" href="../from-table/">Chart from a table <span>→</span></a>
+          <a class="hub-link" href="../on-phone/">Make a graph on phone <span>→</span></a>
+          <a class="hub-link" href="../">VIA home <span>→</span></a>
+        </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <span><a href="../">← Все инструменты</a></span>
+      <a href="../">← All tools</a>
       <a href="https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152">App Store</a>
     </footer>
   </div>

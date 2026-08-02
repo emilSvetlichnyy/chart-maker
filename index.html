@@ -1,78 +1,228 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VIA — сделать график и диаграмму онлайн</title>
-  <meta name="description" content="Быстро сделайте круговую или столбчатую диаграмму онлайн и откройте в приложении VIA на телефоне. Без Excel и лишних настроек.">
+  <title>VIA — Chart Maker & Graph Builder for iPhone</title>
+  <meta name="description" content="VIA turns numbers into clear charts. Build a pie or bar chart in the browser, then open the app for timers, edits, and exports on your phone.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;550;650;700&family=Syne:wght@600;700;750&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,550;9..40,650;9..40,700&family=Fraunces:opsz,wght@9..144,550;9..144,650&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="wrap">
     <header class="site-nav">
-      <a class="brand" href="./">VIA <span>chart maker</span></a>
-      <nav class="nav-links" aria-label="Разделы">
-        <a href="pie-chart/">Круговая</a>
-        <a href="bar-chart/">Столбчатая</a>
-        <a href="from-table/">Из таблицы</a>
-        <a href="on-phone/">На телефоне</a>
+      <a class="brand" href="./">VIA <small>chart maker</small></a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="pie-chart/">Pie</a>
+        <a href="bar-chart/">Bar</a>
+        <a href="from-table/">From table</a>
+        <a href="on-phone/">On phone</a>
       </nav>
     </header>
 
     <main>
       <section class="hero">
-        <p class="eyebrow">VIA</p>
-        <h1>Сделайте график за минуту</h1>
+        <p class="eyebrow">Live charts · on tap</p>
+        <h1>VIA — charts & graphs, planned in minutes.</h1>
         <p class="lead">
-          Выберите тип диаграммы, введите числа прямо в браузере — особенно удобно с телефона.
-          Нужны правки и сохранение? Откройте в приложении VIA.
+          Turn raw numbers into a clear visual. Build a chart here, then open VIA
+          on iPhone to edit, save, and share without wrestling Excel.
         </p>
         <div class="actions">
           <a class="btn btn-primary" href="https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152">
-            Открыть VIA в App Store
+            Download on the App Store
           </a>
-          <a class="btn btn-secondary" href="pie-chart/">Сделать круговую сейчас</a>
+          <a class="btn btn-secondary" href="#chart-now">Try a chart now</a>
+        </div>
+        <p class="store-note">Free to start · Built for iPhone & iPad</p>
+      </section>
+
+      <section class="widget" id="chart-now">
+        <div class="widget-top">
+          <div>
+            <h2>Build a chart now</h2>
+            <p class="hint">Tap once to preview a pie from your numbers — no signup.</p>
+          </div>
+          <span class="badge">Browser tool</span>
+        </div>
+        <div class="widget-grid split">
+          <div>
+            <div class="rows" id="rows">
+              <div class="row">
+                <label>Label
+                  <input data-field="label" type="text" value="Product A">
+                </label>
+                <label>Value
+                  <input data-field="value" type="number" min="0" step="any" value="40">
+                </label>
+                <button type="button" class="btn btn-ghost" data-remove>Remove</button>
+              </div>
+              <div class="row">
+                <label>Label
+                  <input data-field="label" type="text" value="Product B">
+                </label>
+                <label>Value
+                  <input data-field="value" type="number" min="0" step="any" value="25">
+                </label>
+                <button type="button" class="btn btn-ghost" data-remove>Remove</button>
+              </div>
+              <div class="row">
+                <label>Label
+                  <input data-field="label" type="text" value="Product C">
+                </label>
+                <label>Value
+                  <input data-field="value" type="number" min="0" step="any" value="20">
+                </label>
+                <button type="button" class="btn btn-ghost" data-remove>Remove</button>
+              </div>
+              <div class="row">
+                <label>Label
+                  <input data-field="label" type="text" value="Other">
+                </label>
+                <label>Value
+                  <input data-field="value" type="number" min="0" step="any" value="15">
+                </label>
+                <button type="button" class="btn btn-ghost" data-remove>Remove</button>
+              </div>
+            </div>
+            <div class="toolbar">
+              <button class="btn btn-secondary" type="button" id="addBtn">Add slice</button>
+              <button class="btn btn-secondary" type="button" id="downloadBtn">Download PNG</button>
+              <span class="meta" id="totalMeta">Total: 0</span>
+            </div>
+          </div>
+          <div>
+            <div class="chart-box">
+              <canvas id="chart" width="280" height="280" aria-label="Pie chart preview"></canvas>
+            </div>
+            <table class="legend" id="legend">
+              <thead>
+                <tr>
+                  <th>Slice</th>
+                  <th>Value</th>
+                  <th>Share</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
         </div>
       </section>
 
       <section class="section">
-        <h2>Что хотите сделать</h2>
-        <div class="cards">
-          <a class="card-link" href="pie-chart/">
-            <strong>Круговая диаграмма онлайн</strong>
-            <span>Доли от целого: продажи, расходы, опросы</span>
+        <div class="feature-grid">
+          <article class="feature">
+            <h3>Pick the chart that fits</h3>
+            <p>Pie for shares of a whole. Bar for comparisons. Start in the browser, finish in VIA when you need more control.</p>
+          </article>
+          <article class="feature">
+            <h3>Built for phone-first work</h3>
+            <p>Large fields, fast preview, and an App Store path when you want to save and send from iPhone.</p>
+          </article>
+          <article class="feature">
+            <h3>“Remind me when it’s done”</h3>
+            <p>Create the visual, export a PNG, or jump into VIA to keep editing labels, colors, and chart type.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>Popular chart tools</h2>
+          <p>Live makers and guides for the searches people actually type.</p>
+        </div>
+        <div class="dir-grid">
+          <a class="dir-link" href="pie-chart/">
+            <div>
+              <strong>Pie chart maker</strong>
+              <span>Shares of a whole · online</span>
+            </div>
+            <span class="arrow">→</span>
           </a>
-          <a class="card-link" href="bar-chart/">
-            <strong>Столбчатая диаграмма</strong>
-            <span>Сравнить значения по категориям</span>
+          <a class="dir-link" href="bar-chart/">
+            <div>
+              <strong>Bar chart maker</strong>
+              <span>Compare categories · online</span>
+            </div>
+            <span class="arrow">→</span>
           </a>
-          <a class="card-link" href="from-table/">
-            <strong>График из таблицы</strong>
-            <span>Если данные уже в Excel или Google Sheets</span>
+          <a class="dir-link" href="from-table/">
+            <div>
+              <strong>Chart from a table</strong>
+              <span>Excel / Sheets → graph</span>
+            </div>
+            <span class="arrow">→</span>
           </a>
-          <a class="card-link" href="on-phone/">
-            <strong>График на телефоне</strong>
-            <span>Быстрый сценарий без компьютера</span>
+          <a class="dir-link" href="on-phone/">
+            <div>
+              <strong>Make a graph on phone</strong>
+              <span>iPhone workflow · no desktop</span>
+            </div>
+            <span class="arrow">→</span>
           </a>
         </div>
       </section>
 
-      <section class="section faq">
-        <h2>Частые вопросы</h2>
+      <section class="section">
+        <div class="section-head">
+          <h2>Chart types VIA turns into action</h2>
+          <p>Each type answers a different question — pick the one that matches the story.</p>
+        </div>
+        <div class="bands">
+          <div class="band"><strong>Pie</strong><span>Shares</span></div>
+          <div class="band"><strong>Bar</strong><span>Compare</span></div>
+          <div class="band"><strong>Line</strong><span>Trend</span></div>
+          <div class="band"><strong>Table</strong><span>Source</span></div>
+          <div class="band"><strong>Phone</strong><span>On the go</span></div>
+        </div>
+        <div class="band-copy">
+          <p><strong>Pie</strong> — best when parts add to 100%: budget, survey answers, mix of sales.</p>
+          <p><strong>Bar</strong> — best when you compare sizes across months, regions, or products.</p>
+          <p><strong>Line</strong> — best for change over time (available in the VIA app).</p>
+          <p><strong>From table</strong> — when numbers already live in Excel or Google Sheets.</p>
+          <p><strong>On phone</strong> — when you need a graph before you get back to a laptop.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <h2>Start with a question, finish with a chart</h2>
+          <p>Each page answers the search first, then moves toward the maker and the app.</p>
+        </div>
+        <div class="hub-grid">
+          <a class="hub-link" href="pie-chart/">Pie chart maker online <span>→</span></a>
+          <a class="hub-link" href="bar-chart/">Bar graph maker free <span>→</span></a>
+          <a class="hub-link" href="from-table/">Make a chart from Excel <span>→</span></a>
+          <a class="hub-link" href="on-phone/">How to make a graph on iPhone <span>→</span></a>
+          <a class="hub-link" href="pie-chart/#questions">What is a pie chart? <span>→</span></a>
+          <a class="hub-link" href="bar-chart/#questions">When to use a bar chart <span>→</span></a>
+          <a class="hub-link" href="from-table/#questions">Chart from Google Sheets <span>→</span></a>
+          <a class="hub-link" href="on-phone/#questions">Best chart maker app <span>→</span></a>
+        </div>
+      </section>
+
+      <section class="section faq" id="questions">
+        <div class="section-head">
+          <h2>Questions</h2>
+          <p>Direct answers before the install CTA.</p>
+        </div>
         <details>
-          <summary>Это бесплатно?</summary>
-          <p>Онлайн-инструменты на сайте бесплатны. В приложении VIA есть бесплатный старт и опции подписки для расширенных функций.</p>
+          <summary>What is VIA?</summary>
+          <p>VIA is a chart & graph builder for iPhone. Enter data, pick pie, bar, or line, then customize and export without a heavy spreadsheet UI.</p>
         </details>
         <details>
-          <summary>Нужен ли Excel?</summary>
-          <p>Нет. Можно ввести числа вручную. Если таблица уже есть — смотрите страницу «Из таблицы».</p>
+          <summary>Can I use VIA without installing the app?</summary>
+          <p>Yes. These website pages answer chart questions and include free browser makers for pie and bar. The app adds saved charts, more types, and phone-native editing.</p>
         </details>
         <details>
-          <summary>Можно с iPhone?</summary>
-          <p>Да. Страницы сайта открываются в мобильном браузере, а приложение VIA сделано под телефон.</p>
+          <summary>Is this free?</summary>
+          <p>The online tools on this site are free. VIA on the App Store is free to start, with optional in-app purchases for expanded use.</p>
+        </details>
+        <details>
+          <summary>Do I need Excel?</summary>
+          <p>No. Type numbers here, or copy values from a table. If your data is already in Excel or Sheets, start on the From table page.</p>
         </details>
       </section>
     </main>
@@ -80,7 +230,21 @@
     <footer class="site-footer">
       <span>© VIA · Emil Svetlichnyy</span>
       <a href="https://emilsvetlichnyy.github.io/chartBuilderPrivacy/">Privacy</a>
+      <a href="https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152">App Store</a>
     </footer>
   </div>
+
+  <script src="chart.js"></script>
+  <script>
+    ChartMaker.bindTool({
+      type: "pie",
+      rowsId: "rows",
+      canvasId: "chart",
+      legendId: "legend",
+      addBtnId: "addBtn",
+      downloadBtnId: "downloadBtn",
+      totalId: "totalMeta"
+    });
+  </script>
 </body>
 </html>
