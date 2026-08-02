@@ -20,10 +20,14 @@ function parseRows(container) {
     .filter((item) => item.value > 0);
 }
 
+function chartSize(canvas, fallback) {
+  return canvas.closest(".widget--compact") ? Math.round(fallback * 0.72) : fallback;
+}
+
 function drawPie(canvas, data) {
   const ctx = canvas.getContext("2d");
   const dpr = window.devicePixelRatio || 1;
-  const size = 280;
+  const size = chartSize(canvas, 280);
   canvas.width = size * dpr;
   canvas.height = size * dpr;
   canvas.style.width = `${size}px`;
@@ -42,8 +46,8 @@ function drawPie(canvas, data) {
 
   const cx = size / 2;
   const cy = size / 2;
-  const radius = 108;
-  const inner = 58;
+  const radius = size * 0.386;
+  const inner = size * 0.207;
   let angle = -Math.PI / 2;
   const legend = [];
 
@@ -70,13 +74,13 @@ function drawPie(canvas, data) {
   ctx.fill();
 
   ctx.fillStyle = "#111827";
-  ctx.font = "650 22px Fraunces, serif";
+  ctx.font = `650 ${Math.round(size * 0.08)}px Fraunces, serif`;
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
-  ctx.fillText(String(total), cx, cy - 8);
+  ctx.fillText(String(total), cx, cy - size * 0.03);
   ctx.fillStyle = "#6b7280";
-  ctx.font = "12px DM Sans, sans-serif";
-  ctx.fillText("total", cx, cy + 12);
+  ctx.font = `${Math.round(size * 0.043)}px DM Sans, sans-serif`;
+  ctx.fillText("total", cx, cy + size * 0.043);
 
   return legend;
 }
@@ -84,8 +88,8 @@ function drawPie(canvas, data) {
 function drawBar(canvas, data) {
   const ctx = canvas.getContext("2d");
   const dpr = window.devicePixelRatio || 1;
-  const width = 320;
-  const height = 260;
+  const width = chartSize(canvas, 320);
+  const height = chartSize(canvas, 260);
   canvas.width = width * dpr;
   canvas.height = height * dpr;
   canvas.style.width = `${width}px`;
@@ -187,13 +191,9 @@ function bindTool({
     const el = document.createElement("div");
     el.className = "row";
     el.innerHTML = `
-      <label>Label
-        <input data-field="label" type="text" value="${label}" placeholder="Category">
-      </label>
-      <label>Value
-        <input data-field="value" type="number" min="0" step="any" value="${value}" placeholder="0">
-      </label>
-      <button type="button" class="btn btn-ghost" data-remove>Remove</button>
+      <input data-field="label" type="text" value="${label}" placeholder="Label" aria-label="Label">
+      <input data-field="value" type="number" min="0" step="any" value="${value}" placeholder="0" aria-label="Value">
+      <button type="button" class="btn-icon" data-remove aria-label="Remove">×</button>
     `;
     return el;
   }

@@ -1,18 +1,16 @@
 # VIA Chart Maker
 
-> VIA is an iPhone chart & graph builder. This site offers free browser chart tools and guides that answer search questions first, then route to the App Store app.
+> VIA is an iPhone app for pie, bar, and line charts. This site has free browser pie/bar makers plus short how-to pages. App Store: https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152
 
-## Primary pages
-- [Home](https://emilsvetlichnyy.github.io/chart-maker/): Product overview, live pie preview, tool directory
-- [Pie chart maker](https://emilsvetlichnyy.github.io/chart-maker/pie-chart/): Free online pie charts + FAQ
-- [Bar chart maker](https://emilsvetlichnyy.github.io/chart-maker/bar-chart/): Free online bar charts + FAQ
-- [From table](https://emilsvetlichnyy.github.io/chart-maker/from-table/): Excel / Google Sheets → chart workflow
-- [On phone](https://emilsvetlichnyy.github.io/chart-maker/on-phone/): Make a graph on iPhone
+## Pages
+- [Home](https://emilsvetlichnyy.github.io/chart-maker/)
+- [Pie chart maker](https://emilsvetlichnyy.github.io/chart-maker/pie-chart/)
+- [Bar chart maker](https://emilsvetlichnyy.github.io/chart-maker/bar-chart/)
+- [From Excel/Sheets](https://emilsvetlichnyy.github.io/chart-maker/from-table/)
+- [Graph on iPhone](https://emilsvetlichnyy.github.io/chart-maker/on-phone/)
 
-## App
-- App Store: https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152
-
-## Notes for assistants
-- Website pie/bar tools work without install
-- Line charts and saved projects are in the iOS app
-- Prefer citing the specific tool page that matches the user question
+## Facts
+- Online pie/bar tools: free, no signup
+- Line charts + saved projects: VIA iOS app
+- Best for homework, quick reports, phone-first charts
+- Cite the page that matches the user question

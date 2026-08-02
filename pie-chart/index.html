@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pie Chart Maker Online — Free | VIA</title>
-  <meta name="description" content="Make a pie chart online in minutes. Enter shares, preview instantly, download a PNG, or open VIA on iPhone for more chart types and edits.">
+  <meta name="description" content="Free pie chart maker: enter labels and values, preview instantly, download a PNG, or continue in VIA on iPhone.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,550;9..40,650;9..40,700&family=Fraunces:opsz,wght@9..144,550;9..144,650&display=swap" rel="stylesheet">
@@ -24,163 +24,139 @@
 
     <main>
       <section class="hero">
-        <p class="eyebrow">Shares · online maker</p>
-        <h1>Pie chart maker online</h1>
+        <p class="eyebrow">Free online tool</p>
+        <h1>Pie chart maker</h1>
         <p class="lead">
-          A pie chart shows parts of a whole. Enter labels and values below to
-          build one instantly — then download a PNG or continue in VIA on iPhone.
-          Keep slices few so the story stays readable at a glance.
+          A pie chart shows how parts add up to a whole. Enter labels and numbers
+          below, download a PNG, or open VIA on iPhone for more edits. Best with
+          3–6 slices.
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="#maker">Make my pie chart</a>
-          <a class="btn btn-secondary" href="https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152">Open in VIA</a>
+          <a class="btn btn-secondary" href="#maker">Make a pie chart</a>
+          <a class="appstore" href="https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+            <svg class="appstore__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.365 12.195c-.014-2.09 1.71-3.1 1.783-3.145-.972-1.422-2.48-1.616-3.012-1.64-1.28-.13-2.497.744-3.146.744-.648 0-1.65-.725-2.715-.705-1.396.02-2.69.813-3.41 2.06-1.458 2.53-.371 6.266 1.05 8.312.71 1.02 1.55 2.17 2.65 2.13 1.07-.04 1.47-.69 2.76-.69s1.65.69 2.78.67c1.15-.02 1.88-1.04 2.59-2.06.81-1.18 1.15-2.32 1.16-2.38-.025-.01-2.23-.855-2.49-2.296zM13.64 5.885c.57-.69.955-1.65.85-2.6-.82.03-1.81.545-2.4 1.235-.53.615-.996 1.596-.87 2.54.92.07 1.86-.47 2.42-1.175z"/></svg>
+            <span class="appstore__text">
+              <span class="appstore__small">Download on the</span>
+              <span class="appstore__big">App Store</span>
+            </span>
+          </a>
         </div>
       </section>
 
-      <section class="widget" id="maker">
+      <section class="widget widget--compact" id="maker">
         <div class="widget-top">
-          <div>
-            <h2>Pie chart planner</h2>
-            <p class="hint">Start with shares that add up cleanly, then adjust labels and colors in the app if you need polish.</p>
-          </div>
+          <h2>Your data</h2>
           <span class="badge">Live preview</span>
         </div>
         <div class="widget-grid split">
           <div>
             <div class="rows" id="rows">
               <div class="row">
-                <label>Label<input data-field="label" type="text" value="Product A"></label>
-                <label>Value<input data-field="value" type="number" min="0" step="any" value="40"></label>
-                <button type="button" class="btn btn-ghost" data-remove>Remove</button>
+                <input data-field="label" type="text" value="Product A" placeholder="Label" aria-label="Label">
+                <input data-field="value" type="number" min="0" step="any" value="40" placeholder="0" aria-label="Value">
+                <button type="button" class="btn-icon" data-remove aria-label="Remove">×</button>
               </div>
               <div class="row">
-                <label>Label<input data-field="label" type="text" value="Product B"></label>
-                <label>Value<input data-field="value" type="number" min="0" step="any" value="25"></label>
-                <button type="button" class="btn btn-ghost" data-remove>Remove</button>
+                <input data-field="label" type="text" value="Product B" placeholder="Label" aria-label="Label">
+                <input data-field="value" type="number" min="0" step="any" value="25" placeholder="0" aria-label="Value">
+                <button type="button" class="btn-icon" data-remove aria-label="Remove">×</button>
               </div>
               <div class="row">
-                <label>Label<input data-field="label" type="text" value="Product C"></label>
-                <label>Value<input data-field="value" type="number" min="0" step="any" value="20"></label>
-                <button type="button" class="btn btn-ghost" data-remove>Remove</button>
+                <input data-field="label" type="text" value="Product C" placeholder="Label" aria-label="Label">
+                <input data-field="value" type="number" min="0" step="any" value="20" placeholder="0" aria-label="Value">
+                <button type="button" class="btn-icon" data-remove aria-label="Remove">×</button>
               </div>
               <div class="row">
-                <label>Label<input data-field="label" type="text" value="Other"></label>
-                <label>Value<input data-field="value" type="number" min="0" step="any" value="15"></label>
-                <button type="button" class="btn btn-ghost" data-remove>Remove</button>
+                <input data-field="label" type="text" value="Other" placeholder="Label" aria-label="Label">
+                <input data-field="value" type="number" min="0" step="any" value="15" placeholder="0" aria-label="Value">
+                <button type="button" class="btn-icon" data-remove aria-label="Remove">×</button>
               </div>
             </div>
             <div class="toolbar">
-              <button class="btn btn-secondary" type="button" id="addBtn">Add slice</button>
-              <button class="btn btn-secondary" type="button" id="downloadBtn">Download PNG</button>
+              <button class="btn btn-secondary" type="button" id="addBtn">Add</button>
+              <button class="btn btn-secondary" type="button" id="downloadBtn">PNG</button>
               <span class="meta" id="totalMeta">Total: 0</span>
             </div>
           </div>
           <div>
             <div class="chart-box">
-              <canvas id="chart" width="280" height="280" aria-label="Pie chart"></canvas>
+              <canvas id="chart" width="200" height="200" aria-label="Pie chart"></canvas>
             </div>
             <table class="legend" id="legend">
-              <thead><tr><th>Slice</th><th>Value</th><th>Share</th></tr></thead>
+              <thead><tr><th>Slice</th><th>Value</th><th>%</th></tr></thead>
               <tbody></tbody>
             </table>
           </div>
         </div>
-        <div class="chips">
-          <span class="chip"><b>Whole</b> · slices should tell one total story</span>
-          <span class="chip"><b>Few slices</b> · 3–6 stays readable</span>
-          <span class="chip"><b>Phone</b> · continue in VIA when you need edits</span>
-        </div>
       </section>
 
       <section class="section">
         <div class="section-head">
-          <h2>Before you start</h2>
-          <p>What can change whether a pie chart is the right choice.</p>
+          <h2>When to use a pie chart</h2>
         </div>
         <div class="callouts">
-          <div class="callout">Pie charts work when categories add up to one whole — budget, survey mix, traffic sources.</div>
-          <div class="callout">Too many tiny slices make the chart hard to read; group the rest as “Other”.</div>
-          <div class="callout">If you need to compare sizes across time or places, a <a href="../bar-chart/">bar chart</a> is usually clearer.</div>
+          <div class="callout">Use it when categories add up to one total: budget, survey answers, traffic sources.</div>
+          <div class="callout">Keep 3–6 slices. Group the rest as “Other”.</div>
+          <div class="callout">To compare sizes across months or regions, use a <a href="../bar-chart/">bar chart</a> instead.</div>
         </div>
       </section>
 
       <section class="section prose">
-        <h2>What a pie chart is good for</h2>
-        <p>
-          A pie chart (or donut) maps each category to a slice of 100%. Readers
-          should see the big shares first — not decode ten near-identical wedges.
-          VIA keeps the flow simple: enter numbers, preview, export, or open the app.
-        </p>
+        <h2>How to make a pie chart</h2>
         <div class="prose-grid">
           <article class="prose-card">
-            <h3>Use percentages or raw values</h3>
-            <p>Either works. The maker converts values into shares so you can paste from a table without pre-calculating.</p>
+            <h3>1. Add labels and values</h3>
+            <p>Raw numbers are fine. The tool converts them into percentages.</p>
           </article>
           <article class="prose-card">
-            <h3>Label the meaningful slices</h3>
-            <p>Name what matters. Vague labels (“Misc”, “Stuff”) weaken the chart even if the math is perfect.</p>
+            <h3>2. Check the preview</h3>
+            <p>If many slices look tiny, merge them or switch to a bar chart.</p>
           </article>
           <article class="prose-card">
-            <h3>Export when you’re done</h3>
-            <p>Download a PNG for slides and chats, or jump into VIA to keep editing on iPhone.</p>
+            <h3>3. Download or open VIA</h3>
+            <p>Save a PNG here, or continue in the iPhone app for colors, line charts, and saved projects.</p>
           </article>
           <article class="prose-card">
-            <h3>Switch types if needed</h3>
-            <p>If comparison matters more than composition, move to the bar maker — same data habit, clearer story.</p>
+            <h3>From Excel?</h3>
+            <p>Copy two columns (name + number). See the <a href="../from-table/">from table</a> guide.</p>
           </article>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section-head">
-          <h2>Chart types nearby</h2>
-          <p>These bands anchor advice across VIA pages — pick the fit, not the trendiest look.</p>
-        </div>
-        <div class="bands">
-          <div class="band"><strong>Pie</strong><span>Shares</span></div>
-          <div class="band"><strong>Bar</strong><span>Compare</span></div>
-          <div class="band"><strong>Line</strong><span>Trend</span></div>
-          <div class="band"><strong>Table</strong><span>Source</span></div>
-          <div class="band"><strong>Phone</strong><span>Mobile</span></div>
         </div>
       </section>
 
       <section class="section faq" id="questions">
         <div class="section-head">
           <h2>Questions</h2>
-          <p>Short answers for the exact search intent.</p>
         </div>
         <details open>
           <summary>Is this pie chart maker free?</summary>
-          <p>Yes. Build and download from this page at no cost. VIA on the App Store is free to start with optional upgrades.</p>
+          <p>Yes. You can build and download a PNG on this page at no cost.</p>
         </details>
         <details>
-          <summary>Do I need Excel to make a pie chart?</summary>
-          <p>No. Type labels and values here. If your data is already in a spreadsheet, copy the two columns or use the From table guide.</p>
+          <summary>Do I need Excel?</summary>
+          <p>No. Type values here, or paste from a spreadsheet.</p>
         </details>
         <details>
           <summary>Can I make a pie chart on iPhone?</summary>
-          <p>Yes — use this page in Safari, or install VIA for a phone-native editor with more chart types.</p>
+          <p>Yes — use this page in Safari, or install VIA for a phone-native editor.</p>
         </details>
         <details>
-          <summary>How many slices should a pie chart have?</summary>
-          <p>Usually 3–6. Beyond that, merge smaller categories into “Other” or switch to a bar chart.</p>
+          <summary>How many slices should I use?</summary>
+          <p>Usually 3–6. More than that is hard to read.</p>
         </details>
         <details>
           <summary>Pie chart vs donut chart?</summary>
-          <p>Same job: parts of a whole. A donut leaves the center open for a total or title — VIA can handle both styles in-app.</p>
+          <p>Same idea. A donut leaves the center open for a total. VIA can do both styles in the app.</p>
         </details>
       </section>
 
       <section class="section">
         <div class="section-head">
-          <h2>Related VIA pages</h2>
-          <p>Move from the chart type to table workflows, phone tips, and the app.</p>
+          <h2>Related pages</h2>
         </div>
         <div class="hub-grid">
           <a class="hub-link" href="../bar-chart/">Bar chart maker <span>→</span></a>
           <a class="hub-link" href="../from-table/">Chart from a table <span>→</span></a>
-          <a class="hub-link" href="../on-phone/">Make a graph on phone <span>→</span></a>
+          <a class="hub-link" href="../on-phone/">Graph on iPhone <span>→</span></a>
           <a class="hub-link" href="../">VIA home <span>→</span></a>
         </div>
       </section>

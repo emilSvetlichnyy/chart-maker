@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VIA — Chart Maker & Graph Builder for iPhone</title>
-  <meta name="description" content="VIA turns numbers into clear charts. Build a pie or bar chart in the browser, then open the app for timers, edits, and exports on your phone.">
+  <title>VIA — Free Chart Maker for iPhone</title>
+  <meta name="description" content="Make a pie or bar chart online for free, then edit and export in VIA on iPhone. No Excel required.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,550;9..40,650;9..40,700&family=Fraunces:opsz,wght@9..144,550;9..144,650&display=swap" rel="stylesheet">
@@ -24,85 +24,69 @@
 
     <main>
       <section class="hero">
-        <p class="eyebrow">Live charts · on tap</p>
-        <h1>VIA — charts & graphs, planned in minutes.</h1>
+        <p class="eyebrow">Charts on iPhone</p>
+        <h1>VIA — make charts in a few taps.</h1>
         <p class="lead">
-          Turn raw numbers into a clear visual. Build a chart here, then open VIA
-          on iPhone to edit, save, and share without wrestling Excel.
+          Enter numbers, get a pie or bar chart, download a PNG, or keep editing
+          in the iPhone app. Free to start.
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152">
-            Download on the App Store
+          <a class="appstore" href="https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152" target="_blank" rel="noopener noreferrer" aria-label="Download on the App Store">
+            <svg class="appstore__icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M16.365 12.195c-.014-2.09 1.71-3.1 1.783-3.145-.972-1.422-2.48-1.616-3.012-1.64-1.28-.13-2.497.744-3.146.744-.648 0-1.65-.725-2.715-.705-1.396.02-2.69.813-3.41 2.06-1.458 2.53-.371 6.266 1.05 8.312.71 1.02 1.55 2.17 2.65 2.13 1.07-.04 1.47-.69 2.76-.69s1.65.69 2.78.67c1.15-.02 1.88-1.04 2.59-2.06.81-1.18 1.15-2.32 1.16-2.38-.025-.01-2.23-.855-2.49-2.296zM13.64 5.885c.57-.69.955-1.65.85-2.6-.82.03-1.81.545-2.4 1.235-.53.615-.996 1.596-.87 2.54.92.07 1.86-.47 2.42-1.175z"/></svg>
+            <span class="appstore__text">
+              <span class="appstore__small">Download on the</span>
+              <span class="appstore__big">App Store</span>
+            </span>
           </a>
-          <a class="btn btn-secondary" href="#chart-now">Try a chart now</a>
+          <a class="btn btn-secondary" href="#chart-now">Try online</a>
         </div>
-        <p class="store-note">Free to start · Built for iPhone & iPad</p>
       </section>
 
-      <section class="widget" id="chart-now">
+      <section class="widget widget--compact" id="chart-now">
         <div class="widget-top">
-          <div>
-            <h2>Build a chart now</h2>
-            <p class="hint">Tap once to preview a pie from your numbers — no signup.</p>
-          </div>
-          <span class="badge">Browser tool</span>
+          <h2>Make a pie chart</h2>
+          <span class="badge">No signup</span>
         </div>
         <div class="widget-grid split">
           <div>
             <div class="rows" id="rows">
               <div class="row">
-                <label>Label
-                  <input data-field="label" type="text" value="Product A">
-                </label>
-                <label>Value
-                  <input data-field="value" type="number" min="0" step="any" value="40">
-                </label>
-                <button type="button" class="btn btn-ghost" data-remove>Remove</button>
+                <input data-field="label" type="text" value="Product A" placeholder="Label" aria-label="Label">
+                <input data-field="value" type="number" min="0" step="any" value="40" placeholder="0" aria-label="Value">
+                <button type="button" class="btn-icon" data-remove aria-label="Remove">×</button>
               </div>
               <div class="row">
-                <label>Label
-                  <input data-field="label" type="text" value="Product B">
-                </label>
-                <label>Value
-                  <input data-field="value" type="number" min="0" step="any" value="25">
-                </label>
-                <button type="button" class="btn btn-ghost" data-remove>Remove</button>
+                <input data-field="label" type="text" value="Product B" placeholder="Label" aria-label="Label">
+                <input data-field="value" type="number" min="0" step="any" value="25" placeholder="0" aria-label="Value">
+                <button type="button" class="btn-icon" data-remove aria-label="Remove">×</button>
               </div>
               <div class="row">
-                <label>Label
-                  <input data-field="label" type="text" value="Product C">
-                </label>
-                <label>Value
-                  <input data-field="value" type="number" min="0" step="any" value="20">
-                </label>
-                <button type="button" class="btn btn-ghost" data-remove>Remove</button>
+                <input data-field="label" type="text" value="Product C" placeholder="Label" aria-label="Label">
+                <input data-field="value" type="number" min="0" step="any" value="20" placeholder="0" aria-label="Value">
+                <button type="button" class="btn-icon" data-remove aria-label="Remove">×</button>
               </div>
               <div class="row">
-                <label>Label
-                  <input data-field="label" type="text" value="Other">
-                </label>
-                <label>Value
-                  <input data-field="value" type="number" min="0" step="any" value="15">
-                </label>
-                <button type="button" class="btn btn-ghost" data-remove>Remove</button>
+                <input data-field="label" type="text" value="Other" placeholder="Label" aria-label="Label">
+                <input data-field="value" type="number" min="0" step="any" value="15" placeholder="0" aria-label="Value">
+                <button type="button" class="btn-icon" data-remove aria-label="Remove">×</button>
               </div>
             </div>
             <div class="toolbar">
-              <button class="btn btn-secondary" type="button" id="addBtn">Add slice</button>
-              <button class="btn btn-secondary" type="button" id="downloadBtn">Download PNG</button>
+              <button class="btn btn-secondary" type="button" id="addBtn">Add</button>
+              <button class="btn btn-secondary" type="button" id="downloadBtn">PNG</button>
               <span class="meta" id="totalMeta">Total: 0</span>
             </div>
           </div>
           <div>
             <div class="chart-box">
-              <canvas id="chart" width="280" height="280" aria-label="Pie chart preview"></canvas>
+              <canvas id="chart" width="200" height="200" aria-label="Pie chart preview"></canvas>
             </div>
             <table class="legend" id="legend">
               <thead>
                 <tr>
                   <th>Slice</th>
                   <th>Value</th>
-                  <th>Share</th>
+                  <th>%</th>
                 </tr>
               </thead>
               <tbody></tbody>
@@ -114,51 +98,51 @@
       <section class="section">
         <div class="feature-grid">
           <article class="feature">
-            <h3>Pick the chart that fits</h3>
-            <p>Pie for shares of a whole. Bar for comparisons. Start in the browser, finish in VIA when you need more control.</p>
+            <h3>Pie, bar, or line</h3>
+            <p>Use pie for shares, bar to compare values, line for trends over time (line is in the app).</p>
           </article>
           <article class="feature">
-            <h3>Built for phone-first work</h3>
-            <p>Large fields, fast preview, and an App Store path when you want to save and send from iPhone.</p>
+            <h3>Works on iPhone</h3>
+            <p>Build a quick chart in the browser, or open VIA to save, edit, and share from your phone.</p>
           </article>
           <article class="feature">
-            <h3>“Remind me when it’s done”</h3>
-            <p>Create the visual, export a PNG, or jump into VIA to keep editing labels, colors, and chart type.</p>
+            <h3>Export as PNG</h3>
+            <p>Download the image for chats, homework, or slides. No spreadsheet setup required.</p>
           </article>
         </div>
       </section>
 
       <section class="section">
         <div class="section-head">
-          <h2>Popular chart tools</h2>
-          <p>Live makers and guides for the searches people actually type.</p>
+          <h2>Chart tools</h2>
+          <p>Pick the page that matches what you need.</p>
         </div>
         <div class="dir-grid">
           <a class="dir-link" href="pie-chart/">
             <div>
               <strong>Pie chart maker</strong>
-              <span>Shares of a whole · online</span>
+              <span>Parts of a whole</span>
             </div>
             <span class="arrow">→</span>
           </a>
           <a class="dir-link" href="bar-chart/">
             <div>
               <strong>Bar chart maker</strong>
-              <span>Compare categories · online</span>
+              <span>Compare categories</span>
             </div>
             <span class="arrow">→</span>
           </a>
           <a class="dir-link" href="from-table/">
             <div>
               <strong>Chart from a table</strong>
-              <span>Excel / Sheets → graph</span>
+              <span>Excel or Google Sheets</span>
             </div>
             <span class="arrow">→</span>
           </a>
           <a class="dir-link" href="on-phone/">
             <div>
-              <strong>Make a graph on phone</strong>
-              <span>iPhone workflow · no desktop</span>
+              <strong>Graph on iPhone</strong>
+              <span>Phone workflow</span>
             </div>
             <span class="arrow">→</span>
           </a>
@@ -167,29 +151,27 @@
 
       <section class="section">
         <div class="section-head">
-          <h2>Chart types VIA turns into action</h2>
-          <p>Each type answers a different question — pick the one that matches the story.</p>
+          <h2>Which chart should you use?</h2>
         </div>
         <div class="bands">
           <div class="band"><strong>Pie</strong><span>Shares</span></div>
           <div class="band"><strong>Bar</strong><span>Compare</span></div>
           <div class="band"><strong>Line</strong><span>Trend</span></div>
           <div class="band"><strong>Table</strong><span>Source</span></div>
-          <div class="band"><strong>Phone</strong><span>On the go</span></div>
+          <div class="band"><strong>Phone</strong><span>Mobile</span></div>
         </div>
         <div class="band-copy">
-          <p><strong>Pie</strong> — best when parts add to 100%: budget, survey answers, mix of sales.</p>
-          <p><strong>Bar</strong> — best when you compare sizes across months, regions, or products.</p>
-          <p><strong>Line</strong> — best for change over time (available in the VIA app).</p>
-          <p><strong>From table</strong> — when numbers already live in Excel or Google Sheets.</p>
-          <p><strong>On phone</strong> — when you need a graph before you get back to a laptop.</p>
+          <p><strong>Pie</strong> — budget split, survey results, traffic sources.</p>
+          <p><strong>Bar</strong> — months, regions, products, scores.</p>
+          <p><strong>Line</strong> — change over time (VIA app).</p>
+          <p><strong>From table</strong> — data already in Excel or Sheets.</p>
+          <p><strong>On phone</strong> — no laptop nearby.</p>
         </div>
       </section>
 
       <section class="section">
         <div class="section-head">
-          <h2>Start with a question, finish with a chart</h2>
-          <p>Each page answers the search first, then moves toward the maker and the app.</p>
+          <h2>More guides</h2>
         </div>
         <div class="hub-grid">
           <a class="hub-link" href="pie-chart/">Pie chart maker online <span>→</span></a>
@@ -198,31 +180,28 @@
           <a class="hub-link" href="on-phone/">How to make a graph on iPhone <span>→</span></a>
           <a class="hub-link" href="pie-chart/#questions">What is a pie chart? <span>→</span></a>
           <a class="hub-link" href="bar-chart/#questions">When to use a bar chart <span>→</span></a>
-          <a class="hub-link" href="from-table/#questions">Chart from Google Sheets <span>→</span></a>
-          <a class="hub-link" href="on-phone/#questions">Best chart maker app <span>→</span></a>
         </div>
       </section>
 
       <section class="section faq" id="questions">
         <div class="section-head">
           <h2>Questions</h2>
-          <p>Direct answers before the install CTA.</p>
         </div>
         <details>
           <summary>What is VIA?</summary>
-          <p>VIA is a chart & graph builder for iPhone. Enter data, pick pie, bar, or line, then customize and export without a heavy spreadsheet UI.</p>
+          <p>VIA is an iPhone app for pie, bar, and line charts. You enter data, preview the chart, then export or save it.</p>
         </details>
         <details>
-          <summary>Can I use VIA without installing the app?</summary>
-          <p>Yes. These website pages answer chart questions and include free browser makers for pie and bar. The app adds saved charts, more types, and phone-native editing.</p>
+          <summary>Can I use this without installing the app?</summary>
+          <p>Yes. The pie and bar makers on this site work in the browser. The app adds line charts, saved projects, and faster phone editing.</p>
         </details>
         <details>
-          <summary>Is this free?</summary>
-          <p>The online tools on this site are free. VIA on the App Store is free to start, with optional in-app purchases for expanded use.</p>
+          <summary>Is it free?</summary>
+          <p>The online tools are free. The App Store app is free to start; some features may require an in-app purchase.</p>
         </details>
         <details>
           <summary>Do I need Excel?</summary>
-          <p>No. Type numbers here, or copy values from a table. If your data is already in Excel or Sheets, start on the From table page.</p>
+          <p>No. Type values here, or copy two columns from a spreadsheet. See the From table page if your data is already in Excel or Sheets.</p>
         </details>
       </section>
     </main>

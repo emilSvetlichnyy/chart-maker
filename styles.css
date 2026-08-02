@@ -191,9 +191,54 @@ a:hover {
   cursor: not-allowed;
 }
 
+/* Official-style App Store badge (TanPilot pattern) */
+.appstore {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 8px 16px 8px 12px;
+  border-radius: 10px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1.05;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.appstore:hover {
+  background: #111;
+  color: #fff;
+}
+
+.appstore__icon {
+  width: 22px;
+  height: 22px;
+  flex: none;
+}
+
+.appstore__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.appstore__small {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  opacity: 0.9;
+}
+
+.appstore__big {
+  font-size: 1.05rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
 /* Sections */
 .section {
-  margin: 48px 0;
+  margin: 40px 0;
 }
 
 .section-head {
@@ -236,17 +281,26 @@ h3 {
   margin: 28px 0;
 }
 
+.widget--compact {
+  padding: 14px;
+  margin: 22px 0;
+}
+
 .widget-top {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  align-items: flex-start;
-  margin-bottom: 14px;
+  align-items: center;
+  margin-bottom: 12px;
 }
 
 .widget-top h2 {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
+}
+
+.widget--compact .widget-top h2 {
+  font-size: 1.05rem;
 }
 
 .badge {
@@ -266,22 +320,33 @@ h3 {
 
 @media (min-width: 760px) {
   .widget-grid.split {
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 1.05fr 0.95fr;
     align-items: start;
+  }
+
+  .widget--compact .widget-grid.split {
+    grid-template-columns: 1fr 220px;
+    gap: 12px;
   }
 }
 
 .chart-box {
   display: grid;
   place-items: center;
-  min-height: 280px;
+  min-height: 240px;
   border: 1px solid var(--line);
   border-radius: 14px;
   background:
     linear-gradient(#eef2f7 1px, transparent 1px) 0 0 / 22px 22px,
     linear-gradient(90deg, #eef2f7 1px, transparent 1px) 0 0 / 22px 22px,
     #fcfdff;
-  padding: 14px;
+  padding: 10px;
+}
+
+.widget--compact .chart-box {
+  min-height: 200px;
+  padding: 8px;
+  border-radius: 12px;
 }
 
 .chart-box canvas {
@@ -291,23 +356,27 @@ h3 {
 
 .rows {
   display: grid;
-  gap: 10px;
+  gap: 8px;
+}
+
+.widget--compact .rows {
+  gap: 6px;
 }
 
 .row {
   display: grid;
-  grid-template-columns: 1.4fr 0.8fr auto;
-  gap: 8px;
-  align-items: end;
+  grid-template-columns: 1.4fr 0.7fr 36px;
+  gap: 6px;
+  align-items: center;
+}
+
+.row input {
+  width: 100%;
 }
 
 @media (max-width: 560px) {
   .row {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .row .btn {
-    grid-column: 1 / -1;
+    grid-template-columns: 1fr 0.7fr 36px;
   }
 }
 
@@ -319,6 +388,47 @@ label {
   color: var(--muted);
 }
 
+.btn-icon {
+  appearance: none;
+  width: 36px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--muted);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.btn-icon:hover {
+  color: var(--ink);
+  border-color: #cbd5e1;
+}
+
+.btn-icon:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.widget--compact .legend {
+  margin-top: 8px;
+  font-size: 0.82rem;
+}
+
+.widget--compact .legend th,
+.widget--compact .legend td {
+  padding: 5px 2px;
+}
+
+.widget--compact .toolbar {
+  margin-top: 8px;
+}
+
+.widget--compact .hint {
+  display: none;
+}
+
 input[type="text"],
 input[type="number"] {
   width: 100%;
@@ -328,6 +438,12 @@ input[type="number"] {
   font: inherit;
   color: var(--ink);
   background: #fff;
+}
+
+.widget--compact input[type="text"],
+.widget--compact input[type="number"] {
+  padding: 9px 10px;
+  font-size: 0.95rem;
 }
 
 input:focus {
