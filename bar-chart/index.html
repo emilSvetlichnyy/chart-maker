@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Столбчатая диаграмма онлайн — бесплатно | VIA</title>
+  <meta name="description" content="Сделайте столбчатую диаграмму онлайн: сравните значения по категориям, скачайте PNG или откройте в приложении VIA.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;550;650;700&family=Syne:wght@600;700;750&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-nav">
+      <a class="brand" href="../">VIA <span>chart maker</span></a>
+      <nav class="nav-links" aria-label="Разделы">
+        <a href="../pie-chart/">Круговая</a>
+        <a href="./" aria-current="page">Столбчатая</a>
+        <a href="../from-table/">Из таблицы</a>
+        <a href="../on-phone/">На телефоне</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Онлайн-инструмент</p>
+        <h1>Столбчатая диаграмма онлайн</h1>
+        <p class="lead">
+          Сравните значения по категориям за минуту. Введите числа — график
+          обновится сразу. Удобно с телефона.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152">
+            Открыть в приложении
+          </a>
+          <button class="btn btn-secondary" type="button" id="downloadBtn">Скачать картинку</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Сделайте диаграмму сейчас</h2>
+        <p class="hint">Каждая строка — один столбец на графике.</p>
+        <div class="rows" id="rows">
+          <div class="row">
+            <label>Название
+              <input data-field="label" type="text" value="Янв">
+            </label>
+            <label>Значение
+              <input data-field="value" type="number" min="0" step="any" value="12">
+            </label>
+            <button type="button" class="btn btn-ghost" data-remove>Удалить</button>
+          </div>
+          <div class="row">
+            <label>Название
+              <input data-field="label" type="text" value="Фев">
+            </label>
+            <label>Значение
+              <input data-field="value" type="number" min="0" step="any" value="18">
+            </label>
+            <button type="button" class="btn btn-ghost" data-remove>Удалить</button>
+          </div>
+          <div class="row">
+            <label>Название
+              <input data-field="label" type="text" value="Мар">
+            </label>
+            <label>Значение
+              <input data-field="value" type="number" min="0" step="any" value="15">
+            </label>
+            <button type="button" class="btn btn-ghost" data-remove>Удалить</button>
+          </div>
+          <div class="row">
+            <label>Название
+              <input data-field="label" type="text" value="Апр">
+            </label>
+            <label>Значение
+              <input data-field="value" type="number" min="0" step="any" value="22">
+            </label>
+            <button type="button" class="btn btn-ghost" data-remove>Удалить</button>
+          </div>
+        </div>
+        <div class="toolbar">
+          <button class="btn btn-secondary" type="button" id="addBtn">Добавить столбец</button>
+          <span class="meta" id="totalMeta">Сумма: 0</span>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Результат</h2>
+        <div class="chart-box">
+          <canvas id="chart" width="320" height="260" aria-label="Столбчатая диаграмма"></canvas>
+        </div>
+        <table class="legend" id="legend">
+          <thead>
+            <tr>
+              <th>Категория</th>
+              <th>Значение</th>
+              <th>Доля</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section class="section">
+        <h2>Когда нужна столбчатая</h2>
+        <p>
+          Когда важно сравнить величины: месяцы, регионы, товары, оценки.
+          Если нужно показать доли от 100% — лучше
+          <a href="../pie-chart/">круговая диаграмма</a>.
+        </p>
+      </section>
+
+      <section class="section faq">
+        <h2>Частые вопросы</h2>
+        <details>
+          <summary>Можно ли скачать график?</summary>
+          <p>Да — кнопка «Скачать картинку» сохраняет PNG.</p>
+        </details>
+        <details>
+          <summary>Есть ли приложение на iPhone?</summary>
+          <p>Да, VIA в App Store: правки, типы графиков и сохранение на устройстве.</p>
+        </details>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span><a href="../">← Все инструменты</a></span>
+      <a href="https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152">App Store</a>
+    </footer>
+  </div>
+
+  <script src="../chart.js"></script>
+  <script>
+    ChartMaker.bindTool({
+      type: "bar",
+      rowsId: "rows",
+      canvasId: "chart",
+      legendId: "legend",
+      addBtnId: "addBtn",
+      downloadBtnId: "downloadBtn",
+      totalId: "totalMeta"
+    });
+  </script>
+</body>
+</html>
