@@ -30,12 +30,33 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "VIA",
+    "alternateName": "VIA Chart Builder",
+    "url": "https://emilsvetlichnyy.github.io/chart-maker/",
+    "logo": "https://emilsvetlichnyy.github.io/chart-maker/apple-touch-icon.png",
+    "description": "VIA is a native iOS chart maker for pie, bar, line, and radar charts, with free browser pie and bar tools.",
+    "sameAs": [
+      "https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152",
+      "https://apps.apple.com/us/developer/emil-svetlichnyy/id1875514099"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Emil Svetlichnyy",
+      "url": "https://apps.apple.com/us/developer/emil-svetlichnyy/id1875514099"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "VIA",
     "alternateName": "VIA — Chart Builder",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "iOS",
-    "description": "VIA is a native iOS chart maker for pie, bar, and line charts. Make a free pie or bar chart online, then edit and export on iPhone.",
+    "description": "VIA is a native iOS chart maker for pie, bar, line, and radar charts. Make a free pie or bar chart online, then edit and export on iPhone.",
     "offers": {
       "@type": "Offer",
       "price": "0",
@@ -87,7 +108,7 @@
         "name": "What is VIA?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "VIA is an iPhone app for pie, bar, and line charts. You enter data, preview the chart, then export or save it."
+          "text": "VIA is a native iOS chart maker app for pie, bar, line, and radar charts. You enter data, preview the chart, then export or save it on iPhone."
         }
       },
       {
@@ -95,7 +116,7 @@
         "name": "Can I use this without installing the app?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. The pie and bar makers on this site work in the browser. The app adds line charts, saved projects, and faster phone editing."
+          "text": "Yes. The free pie and bar makers on this site work in the browser with no signup. The app adds line charts, radar charts, saved projects, and faster phone editing."
         }
       },
       {
@@ -113,6 +134,22 @@
           "@type": "Answer",
           "text": "No. Type values here, or copy two columns from a spreadsheet. See the From table page if your data is already in Excel or Sheets."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "What chart types does VIA support?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Pie, bar, line, and radar in the native iOS app. This website currently offers live pie and bar makers, plus guides for line, radar, donut, and homework charts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Chart maker or graph maker — is there a difference?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Here they mean the same thing. Use the graph maker hub if you searched for “graph maker.”"
+        }
       }
     ]
   }
@@ -122,11 +159,11 @@
   <div class="wrap">
     <header class="site-nav">
       <a class="brand" href="./">VIA <small>chart maker</small></a>
-      <nav class="nav-links" aria-label="Sections">
+            <nav class="nav-links" aria-label="Sections">
         <a href="pie-chart/">Pie</a>
         <a href="bar-chart/">Bar</a>
-        <a href="from-table/">From table</a>
-        <a href="on-phone/">On phone</a>
+        <a href="line-chart/">Line</a>
+        <a href="radar-chart/">Radar</a>
       </nav>
     </header>
 
@@ -242,14 +279,35 @@
           <a class="dir-link" href="pie-chart/">
             <div>
               <strong>Pie chart maker</strong>
-              <span>Parts of a whole</span>
+              <span>Parts of a whole · free online</span>
             </div>
             <span class="arrow">→</span>
           </a>
           <a class="dir-link" href="bar-chart/">
             <div>
               <strong>Bar chart maker</strong>
-              <span>Compare categories</span>
+              <span>Compare categories · free online</span>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+          <a class="dir-link" href="line-chart/">
+            <div>
+              <strong>Line chart maker</strong>
+              <span>Trends · VIA app</span>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+          <a class="dir-link" href="radar-chart/">
+            <div>
+              <strong>Radar chart maker</strong>
+              <span>Spider charts · VIA app</span>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+          <a class="dir-link" href="donut-chart/">
+            <div>
+              <strong>Donut chart maker</strong>
+              <span>Shares with a center total</span>
             </div>
             <span class="arrow">→</span>
           </a>
@@ -267,6 +325,27 @@
             </div>
             <span class="arrow">→</span>
           </a>
+          <a class="dir-link" href="homework/">
+            <div>
+              <strong>Charts for homework</strong>
+              <span>Students · PNG export</span>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+          <a class="dir-link" href="chart-app/">
+            <div>
+              <strong>Chart maker app</strong>
+              <span>Native iOS · App Store</span>
+            </div>
+            <span class="arrow">→</span>
+          </a>
+          <a class="dir-link" href="graph-maker/">
+            <div>
+              <strong>Graph maker hub</strong>
+              <span>All chart types</span>
+            </div>
+            <span class="arrow">→</span>
+          </a>
         </div>
       </section>
 
@@ -278,6 +357,7 @@
           <div class="band"><strong>Pie</strong><span>Shares</span></div>
           <div class="band"><strong>Bar</strong><span>Compare</span></div>
           <div class="band"><strong>Line</strong><span>Trend</span></div>
+          <div class="band"><strong>Radar</strong><span>Profile</span></div>
           <div class="band"><strong>Table</strong><span>Source</span></div>
           <div class="band"><strong>Phone</strong><span>Mobile</span></div>
         </div>
@@ -285,6 +365,7 @@
           <p><strong>Pie</strong> — budget split, survey results, traffic sources.</p>
           <p><strong>Bar</strong> — months, regions, products, scores.</p>
           <p><strong>Line</strong> — change over time (VIA app).</p>
+          <p><strong>Radar</strong> — multi-axis skill or product scores (VIA app).</p>
           <p><strong>From table</strong> — data already in Excel or Sheets.</p>
           <p><strong>On phone</strong> — no laptop nearby.</p>
         </div>
@@ -297,10 +378,14 @@
         <div class="hub-grid">
           <a class="hub-link" href="pie-chart/">Pie chart maker online <span>→</span></a>
           <a class="hub-link" href="bar-chart/">Bar graph maker free <span>→</span></a>
+          <a class="hub-link" href="line-chart/">Line chart on iPhone <span>→</span></a>
+          <a class="hub-link" href="radar-chart/">Radar / spider chart <span>→</span></a>
+          <a class="hub-link" href="donut-chart/">Donut chart maker <span>→</span></a>
           <a class="hub-link" href="from-table/">Make a chart from Excel <span>→</span></a>
           <a class="hub-link" href="on-phone/">How to make a graph on iPhone <span>→</span></a>
-          <a class="hub-link" href="pie-chart/#questions">What is a pie chart? <span>→</span></a>
-          <a class="hub-link" href="bar-chart/#questions">When to use a bar chart <span>→</span></a>
+          <a class="hub-link" href="homework/">Charts for homework <span>→</span></a>
+          <a class="hub-link" href="chart-app/">Best chart maker app for iPhone <span>→</span></a>
+          <a class="hub-link" href="graph-maker/">Free graph maker <span>→</span></a>
         </div>
       </section>
 
@@ -308,13 +393,13 @@
         <div class="section-head">
           <h2>Questions</h2>
         </div>
-        <details>
+        <details open>
           <summary>What is VIA?</summary>
-          <p>VIA is an iPhone app for pie, bar, and line charts. You enter data, preview the chart, then export or save it.</p>
+          <p>VIA is a native iOS chart maker app for pie, bar, line, and radar charts. You enter data, preview the chart, then export or save it on iPhone.</p>
         </details>
         <details>
           <summary>Can I use this without installing the app?</summary>
-          <p>Yes. The pie and bar makers on this site work in the browser. The app adds line charts, saved projects, and faster phone editing.</p>
+          <p>Yes. The free pie and bar makers on this site work in the browser with no signup. The app adds line charts, radar charts, saved projects, and faster phone editing.</p>
         </details>
         <details>
           <summary>Is it free?</summary>
@@ -323,6 +408,14 @@
         <details>
           <summary>Do I need Excel?</summary>
           <p>No. Type values here, or copy two columns from a spreadsheet. See the From table page if your data is already in Excel or Sheets.</p>
+        </details>
+        <details>
+          <summary>What chart types does VIA support?</summary>
+          <p>Pie, bar, line, and radar in the native iOS app. This website currently offers live pie and bar makers, plus guides for line, radar, donut, and homework charts.</p>
+        </details>
+        <details>
+          <summary>Chart maker or graph maker — is there a difference?</summary>
+          <p>Here they mean the same thing. Use the graph maker hub if you searched for “graph maker.”</p>
         </details>
       </section>
     </main>

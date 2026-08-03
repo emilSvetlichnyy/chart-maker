@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Make a Chart from Excel or Google Sheets | VIA</title>
-  <meta name="description" content="Make a chart from Excel or Google Sheets: copy two columns into VIA’s free pie or bar maker, or continue in the iPhone app.">
+  <meta name="description" content="Make a chart from Excel or Google Sheets: copy two columns into VIA’s free online pie or bar maker, then finish editing in the native iPhone app.">
   <link rel="canonical" href="https://emilsvetlichnyy.github.io/chart-maker/from-table/">
   <meta name="theme-color" content="#0f766e">
   <link rel="icon" href="/chart-maker/favicon.ico">
@@ -14,19 +14,40 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="VIA">
   <meta property="og:title" content="Make a Chart from Excel or Google Sheets | VIA">
-  <meta property="og:description" content="Make a chart from Excel or Google Sheets: copy two columns into VIA’s free pie or bar maker, or continue in the iPhone app.">
+  <meta property="og:description" content="Make a chart from Excel or Google Sheets: copy two columns into VIA’s free online pie or bar maker, then finish editing in the native iPhone app.">
   <meta property="og:url" content="https://emilsvetlichnyy.github.io/chart-maker/from-table/">
   <meta property="og:image" content="https://emilsvetlichnyy.github.io/chart-maker/assets/og/from-table.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Make a Chart from Excel or Google Sheets | VIA">
-  <meta name="twitter:description" content="Make a chart from Excel or Google Sheets: copy two columns into VIA’s free pie or bar maker, or continue in the iPhone app.">
+  <meta name="twitter:description" content="Make a chart from Excel or Google Sheets: copy two columns into VIA’s free online pie or bar maker, then finish editing in the native iPhone app.">
   <meta name="twitter:image" content="https://emilsvetlichnyy.github.io/chart-maker/assets/og/from-table.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,550;9..40,650;9..40,700&family=Fraunces:opsz,wght@9..144,550;9..144,650&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "VIA",
+    "alternateName": "VIA Chart Builder",
+    "url": "https://emilsvetlichnyy.github.io/chart-maker/",
+    "logo": "https://emilsvetlichnyy.github.io/chart-maker/apple-touch-icon.png",
+    "description": "VIA is a native iOS chart maker for pie, bar, line, and radar charts, with free browser pie and bar tools.",
+    "sameAs": [
+      "https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152",
+      "https://apps.apple.com/us/developer/emil-svetlichnyy/id1875514099"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Emil Svetlichnyy",
+      "url": "https://apps.apple.com/us/developer/emil-svetlichnyy/id1875514099"
+    }
+  }
+  </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -52,30 +73,10 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Can I chart Google Sheets data on my phone?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Copy the label and value columns into the pie or bar maker, or enter them in VIA."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What if my columns aren’t next to each other?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Copy each column into a clean two-column block first. That’s usually faster than fighting mobile Excel selection."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need an account?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Not for the website makers. VIA on the App Store can be started without a long setup."
-        }
-      }
+      {"@type": "Question", "name": "Can I chart Google Sheets data on my phone?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Copy the label and value columns into the pie or bar maker, or enter them in VIA."}},
+      {"@type": "Question", "name": "What if my columns aren’t next to each other?", "acceptedAnswer": {"@type": "Answer", "text": "Copy each column into a clean two-column block first. That’s usually faster than fighting mobile Excel selection."}},
+      {"@type": "Question", "name": "Do I need an account?", "acceptedAnswer": {"@type": "Answer", "text": "Not for the website makers. VIA on the App Store can be started without a long setup."}},
+      {"@type": "Question", "name": "Can I make a line chart from a table?", "acceptedAnswer": {"@type": "Answer", "text": "Copy the series into VIA on iPhone for line charts. The browser tools here cover pie and bar."}}
     ]
   }
   </script>
@@ -84,11 +85,11 @@
   <div class="wrap">
     <header class="site-nav">
       <a class="brand" href="../">VIA <small>chart maker</small></a>
-      <nav class="nav-links" aria-label="Sections">
+            <nav class="nav-links" aria-label="Sections">
         <a href="../pie-chart/">Pie</a>
         <a href="../bar-chart/">Bar</a>
-        <a href="./" aria-current="page">From table</a>
-        <a href="../on-phone/">On phone</a>
+        <a href="../line-chart/">Line</a>
+        <a href="../radar-chart/">Radar</a>
       </nav>
     </header>
 
@@ -152,6 +153,10 @@
           <summary>Do I need an account?</summary>
           <p>Not for the website makers. VIA on the App Store can be started without a long setup.</p>
         </details>
+        <details>
+          <summary>Can I make a line chart from a table?</summary>
+          <p>Copy the series into VIA on iPhone for line charts. The browser tools here cover pie and bar.</p>
+        </details>
       </section>
 
       <section class="section">
@@ -161,7 +166,10 @@
         <div class="hub-grid">
           <a class="hub-link" href="../pie-chart/">Pie chart maker <span>→</span></a>
           <a class="hub-link" href="../bar-chart/">Bar chart maker <span>→</span></a>
-          <a class="hub-link" href="../on-phone/">Graph on iPhone <span>→</span></a>
+          <a class="hub-link" href="../line-chart/">Line chart maker <span>→</span></a>
+          <a class="hub-link" href="../radar-chart/">Radar chart maker <span>→</span></a>
+          <a class="hub-link" href="../homework/">Charts for homework <span>→</span></a>
+          <a class="hub-link" href="../chart-app/">Chart maker app <span>→</span></a>
           <a class="hub-link" href="../">VIA home <span>→</span></a>
         </div>
       </section>
