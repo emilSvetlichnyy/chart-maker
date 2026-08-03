@@ -6,3 +6,4 @@ audit-output/sitemap.xml
 node_modules/
 package-lock.json
 package.json
+audit-output/competitors/
