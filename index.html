@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>VIA — Free Chart Maker for iPhone</title>
-  <meta name="description" content="Make a pie or bar chart online for free, then edit and export in VIA on iPhone. No Excel required.">
+  <meta name="description" content="Make a free pie or bar chart online, then edit and export in VIA — a native iPhone chart app. Download a PNG with no Excel or signup required.">
   <link rel="canonical" href="https://emilsvetlichnyy.github.io/chart-maker/">
   <meta name="theme-color" content="#0f766e">
   <link rel="icon" href="/chart-maker/favicon.ico">
@@ -14,15 +14,15 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="VIA">
   <meta property="og:title" content="VIA — Free Chart Maker for iPhone">
-  <meta property="og:description" content="Make a pie or bar chart online for free, then edit and export in VIA on iPhone. No Excel required.">
+  <meta property="og:description" content="Make a free pie or bar chart online, then edit and export in VIA — a native iPhone chart app. Download a PNG with no Excel or signup required.">
   <meta property="og:url" content="https://emilsvetlichnyy.github.io/chart-maker/">
-  <meta property="og:image" content="https://emilsvetlichnyy.github.io/chart-maker/assets/og/index.png">
+  <meta property="og:image" content="https://emilsvetlichnyy.github.io/chart-maker/assets/og/home.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="VIA — Free Chart Maker for iPhone">
-  <meta name="twitter:description" content="Make a pie or bar chart online for free, then edit and export in VIA on iPhone. No Excel required.">
-  <meta name="twitter:image" content="https://emilsvetlichnyy.github.io/chart-maker/assets/og/index.png">
+  <meta name="twitter:description" content="Make a free pie or bar chart online, then edit and export in VIA — a native iPhone chart app. Download a PNG with no Excel or signup required.">
+  <meta name="twitter:image" content="https://emilsvetlichnyy.github.io/chart-maker/assets/og/home.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,550;9..40,650;9..40,700&family=Fraunces:opsz,wght@9..144,550;9..144,650&display=swap" rel="stylesheet">
@@ -31,15 +31,50 @@
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "VIA — Chart Builder",
-    "applicationCategory": "Utility",
+    "name": "VIA",
+    "alternateName": "VIA — Chart Builder",
+    "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "iOS",
+    "description": "VIA is a native iOS chart maker for pie, bar, and line charts. Make a free pie or bar chart online, then edit and export on iPhone.",
     "offers": {
       "@type": "Offer",
       "price": "0",
       "priceCurrency": "USD"
     },
-    "url": "https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152"
+    "url": "https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152",
+    "author": {
+      "@type": "Person",
+      "name": "Emil Svetlichnyy",
+      "url": "https://apps.apple.com/us/developer/emil-svetlichnyy/id1875514099"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Emil Svetlichnyy",
+    "url": "https://apps.apple.com/us/developer/emil-svetlichnyy/id1875514099",
+    "jobTitle": "iOS developer",
+    "sameAs": [
+      "https://apps.apple.com/us/developer/emil-svetlichnyy/id1875514099",
+      "https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152",
+      "https://emilsvetlichnyy.github.io/chartBuilderPrivacy/"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://emilsvetlichnyy.github.io/chart-maker/"
+      }
+    ]
   }
   </script>
   <script type="application/ld+json">
@@ -147,11 +182,19 @@
             <div class="toolbar">
               <button class="btn btn-secondary" type="button" id="addBtn">Add</button>
               <button class="btn btn-secondary" type="button" id="downloadBtn">PNG</button>
-              <span class="meta" id="totalMeta">Total: 0</span>
+              <span class="meta" id="totalMeta">Total: 100</span>
             </div>
           </div>
           <div>
             <div class="chart-box">
+              <svg class="chart-fallback" viewBox="0 0 200 200" role="img" aria-label="Sample pie chart: Product A 40, Product B 25, Product C 20, Other 15">
+                <path fill="#0f766e" d="M 100.00 22.00 A 78 78 0 0 1 145.85 163.10 L 124.69 133.98 A 42 42 0 0 0 100.00 58.00 Z"><title>Product A: 40</title></path>
+                <path fill="#c2410c" d="M 145.85 163.10 A 78 78 0 0 1 36.90 145.85 L 66.02 124.69 A 42 42 0 0 0 124.69 133.98 Z"><title>Product B: 25</title></path>
+                <path fill="#1d4ed8" d="M 36.90 145.85 A 78 78 0 0 1 36.90 54.15 L 66.02 75.31 A 42 42 0 0 0 66.02 124.69 Z"><title>Product C: 20</title></path>
+                <path fill="#be123c" d="M 36.90 54.15 A 78 78 0 0 1 100.00 22.00 L 100.00 58.00 A 42 42 0 0 0 66.02 75.31 Z"><title>Other: 15</title></path>
+                <text x="100" y="96" text-anchor="middle" fill="#111827" font-family="Georgia, serif" font-size="18" font-weight="650">100</text>
+                <text x="100" y="114" text-anchor="middle" fill="#6b7280" font-family="sans-serif" font-size="10">total</text>
+              </svg>
               <canvas id="chart" width="200" height="200" aria-label="Pie chart preview"></canvas>
             </div>
             <table class="legend" id="legend">
@@ -162,7 +205,12 @@
                   <th>%</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+                <tr><td><span class="swatch" style="background:#0f766e"></span>Product A</td><td>40</td><td>40%</td></tr>
+                <tr><td><span class="swatch" style="background:#c2410c"></span>Product B</td><td>25</td><td>25%</td></tr>
+                <tr><td><span class="swatch" style="background:#1d4ed8"></span>Product C</td><td>20</td><td>20%</td></tr>
+                <tr><td><span class="swatch" style="background:#be123c"></span>Other</td><td>15</td><td>15%</td></tr>
+              </tbody>
             </table>
           </div>
         </div>
@@ -175,8 +223,8 @@
             <p>Use pie for shares, bar to compare values, line for trends over time (line is in the app).</p>
           </article>
           <article class="feature">
-            <h3>Works on iPhone</h3>
-            <p>Build a quick chart in the browser, or open VIA to save, edit, and share from your phone.</p>
+            <h3>Native iOS app</h3>
+            <p>VIA is a native iPhone chart app — build online here, then open VIA to save, edit, and share on your phone.</p>
           </article>
           <article class="feature">
             <h3>Export as PNG</h3>
@@ -280,7 +328,13 @@
     </main>
 
     <footer class="site-footer">
-      <span>© VIA · Emil Svetlichnyy</span>
+      <div class="footer-meta">
+        <span>© VIA · Emil Svetlichnyy</span>
+        <p class="author-note">
+          VIA is a native iOS chart app by Emil Svetlichnyy, an independent iOS developer.
+          <a href="https://apps.apple.com/us/developer/emil-svetlichnyy/id1875514099">App Store developer page</a>.
+        </p>
+      </div>
       <a href="https://emilsvetlichnyy.github.io/chartBuilderPrivacy/">Privacy</a>
       <a href="https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152">App Store</a>
     </footer>

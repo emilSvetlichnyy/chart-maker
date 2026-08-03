@@ -30,6 +30,26 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://emilsvetlichnyy.github.io/chart-maker/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Bar chart maker",
+        "item": "https://emilsvetlichnyy.github.io/chart-maker/bar-chart/"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
       {
@@ -125,16 +145,33 @@
             <div class="toolbar">
               <button class="btn btn-secondary" type="button" id="addBtn">Add</button>
               <button class="btn btn-secondary" type="button" id="downloadBtn">PNG</button>
-              <span class="meta" id="totalMeta">Total: 0</span>
+              <span class="meta" id="totalMeta">Total: 67</span>
             </div>
           </div>
           <div>
             <div class="chart-box">
+              <svg class="chart-fallback" viewBox="0 0 230 190" role="img" aria-label="Sample bar chart: Jan 12, Feb 18, Mar 15, Apr 22">
+                <line x1="28" y1="20" x2="28" y2="150" stroke="#e5e7eb"/>
+                <line x1="28" y1="150" x2="210" y2="150" stroke="#e5e7eb"/>
+                <rect x="42" y="82" width="28" height="68" fill="#0f766e"><title>Jan: 12</title></rect>
+                <rect x="86" y="48" width="28" height="102" fill="#c2410c"><title>Feb: 18</title></rect>
+                <rect x="130" y="65" width="28" height="85" fill="#1d4ed8"><title>Mar: 15</title></rect>
+                <rect x="174" y="26" width="28" height="124" fill="#be123c"><title>Apr: 22</title></rect>
+                <text x="56" y="168" text-anchor="middle" fill="#6b7280" font-family="sans-serif" font-size="11">Jan</text>
+                <text x="100" y="168" text-anchor="middle" fill="#6b7280" font-family="sans-serif" font-size="11">Feb</text>
+                <text x="144" y="168" text-anchor="middle" fill="#6b7280" font-family="sans-serif" font-size="11">Mar</text>
+                <text x="188" y="168" text-anchor="middle" fill="#6b7280" font-family="sans-serif" font-size="11">Apr</text>
+              </svg>
               <canvas id="chart" width="230" height="190" aria-label="Bar chart"></canvas>
             </div>
             <table class="legend" id="legend">
               <thead><tr><th>Category</th><th>Value</th><th>%</th></tr></thead>
-              <tbody></tbody>
+              <tbody>
+                <tr><td><span class="swatch" style="background:#0f766e"></span>Jan</td><td>12</td><td>18%</td></tr>
+                <tr><td><span class="swatch" style="background:#c2410c"></span>Feb</td><td>18</td><td>27%</td></tr>
+                <tr><td><span class="swatch" style="background:#1d4ed8"></span>Mar</td><td>15</td><td>22%</td></tr>
+                <tr><td><span class="swatch" style="background:#be123c"></span>Apr</td><td>22</td><td>33%</td></tr>
+              </tbody>
             </table>
           </div>
         </div>

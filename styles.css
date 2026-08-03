@@ -341,6 +341,7 @@ h3 {
     linear-gradient(90deg, #eef2f7 1px, transparent 1px) 0 0 / 22px 22px,
     #fcfdff;
   padding: 10px;
+  position: relative;
 }
 
 .widget--compact .chart-box {
@@ -352,6 +353,24 @@ h3 {
 .chart-box canvas {
   max-width: 100%;
   height: auto;
+}
+
+.chart-fallback {
+  display: block;
+  width: min(100%, 200px);
+  height: auto;
+}
+
+.chart-box.js-ready .chart-fallback {
+  display: none;
+}
+
+.chart-box:not(.js-ready) canvas {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .rows {
@@ -776,6 +795,25 @@ input:focus {
 
 .site-footer a:hover {
   color: var(--ink);
+}
+
+.footer-meta {
+  display: grid;
+  gap: 6px;
+  max-width: 42rem;
+}
+
+.author-note {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--soft);
+}
+
+.author-note a {
+  color: var(--accent-2);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .store-note {

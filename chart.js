@@ -187,6 +187,9 @@ function bindTool({
   const totalEl = document.getElementById(totalId);
   if (!rows || !canvas) return;
 
+  const chartBox = canvas.closest(".chart-box");
+  if (chartBox) chartBox.classList.add("js-ready");
+
   function rowTemplate(label = "", value = "") {
     const el = document.createElement("div");
     el.className = "row";
