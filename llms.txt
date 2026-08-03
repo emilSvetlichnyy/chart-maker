@@ -24,6 +24,9 @@ Pie, Donut, Line, Area, Bar, H. Bar, Stacked, Scatter, Radar, Gantt.
 - Pro required to export: Stacked, Scatter, Radar, Gantt
 - Free caps: 1 saved project, 3 custom colors
 
+## About
+- [About VIA](https://emilsvetlichnyy.github.io/chart-maker/about/)
+
 ## Hubs
 - [Chart types](https://emilsvetlichnyy.github.io/chart-maker/chart-types/)
 - [Compare](https://emilsvetlichnyy.github.io/chart-maker/compare/)

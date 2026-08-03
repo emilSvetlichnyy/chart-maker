@@ -1,0 +1,8 @@
+
+# Local audit crawl dumps (keep reports committed selectively)
+audit-output/*.html
+audit-output/robots.txt
+audit-output/sitemap.xml
+node_modules/
+package-lock.json
+package.json
