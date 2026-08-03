@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emilsvetlichnyy.github.io/chart-maker/sitemap.xml
