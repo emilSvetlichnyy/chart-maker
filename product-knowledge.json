@@ -1,0 +1,199 @@
+{
+  "app": {
+    "displayName": "VIA",
+    "alternateNames": ["VIA Chart Builder", "VIA Graph Maker", "ChartBuilder"],
+    "bundleId": "com.emilsvetlichnyi.via",
+    "platforms": ["iPhone", "iPad"],
+    "minimumOS": "iOS 18.6",
+    "appStoreUrl": "https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152",
+    "developerName": "Emil Svetlichnyy",
+    "developerUrl": "https://apps.apple.com/us/developer/emil-svetlichnyy/id1875514099",
+    "privacyPolicyUrl": "https://emilsvetlichnyy.github.io/chartBuilderPrivacy/",
+    "sourceRoots": {
+      "ios": "../ChartBuilder",
+      "website": "."
+    }
+  },
+  "chartTypes": [
+    {
+      "id": "pie",
+      "label": "Pie",
+      "slug": "pie-chart",
+      "requiresProExport": false,
+      "browserTool": true,
+      "sources": ["ChartBuilder/ChartBuilder/Models/ChartModels.swift"]
+    },
+    {
+      "id": "donut",
+      "label": "Donut",
+      "slug": "donut-chart",
+      "requiresProExport": false,
+      "browserTool": false,
+      "sources": ["ChartBuilder/ChartBuilder/Models/ChartModels.swift"]
+    },
+    {
+      "id": "line",
+      "label": "Line",
+      "slug": "line-chart",
+      "requiresProExport": false,
+      "browserTool": false,
+      "sources": ["ChartBuilder/ChartBuilder/Models/ChartModels.swift"]
+    },
+    {
+      "id": "area",
+      "label": "Area",
+      "slug": "area-chart",
+      "requiresProExport": false,
+      "browserTool": false,
+      "sources": ["ChartBuilder/ChartBuilder/Models/ChartModels.swift"]
+    },
+    {
+      "id": "bar",
+      "label": "Bar",
+      "slug": "bar-chart",
+      "requiresProExport": false,
+      "browserTool": true,
+      "sources": ["ChartBuilder/ChartBuilder/Models/ChartModels.swift"]
+    },
+    {
+      "id": "horizontalBar",
+      "label": "H. Bar",
+      "slug": "horizontal-bar-chart",
+      "requiresProExport": false,
+      "browserTool": false,
+      "sources": ["ChartBuilder/ChartBuilder/Models/ChartModels.swift"]
+    },
+    {
+      "id": "stackedBar",
+      "label": "Stacked",
+      "slug": "stacked-bar-chart",
+      "requiresProExport": true,
+      "browserTool": false,
+      "sources": ["ChartBuilder/ChartBuilder/Models/ChartModels.swift"]
+    },
+    {
+      "id": "scatter",
+      "label": "Scatter",
+      "slug": "scatter-chart",
+      "requiresProExport": true,
+      "browserTool": false,
+      "sources": ["ChartBuilder/ChartBuilder/Models/ChartModels.swift"]
+    },
+    {
+      "id": "radar",
+      "label": "Radar",
+      "slug": "radar-chart",
+      "requiresProExport": true,
+      "browserTool": false,
+      "sources": ["ChartBuilder/ChartBuilder/Models/ChartModels.swift"]
+    },
+    {
+      "id": "gantt",
+      "label": "Gantt",
+      "slug": "gantt-chart",
+      "requiresProExport": true,
+      "browserTool": false,
+      "sources": ["ChartBuilder/ChartBuilder/Models/ChartModels.swift"]
+    }
+  ],
+  "synonyms": [
+    {
+      "searchTerm": "spider chart",
+      "mapsTo": "radar",
+      "note": "Educational synonym. VIA UI label is Radar, not Spider."
+    },
+    {
+      "searchTerm": "horizontal bar chart",
+      "mapsTo": "horizontalBar",
+      "note": "VIA UI label is H. Bar."
+    },
+    {
+      "searchTerm": "stacked bar chart",
+      "mapsTo": "stackedBar",
+      "note": "VIA UI label is Stacked."
+    }
+  ],
+  "browserTools": {
+    "supported": ["pie", "bar"],
+    "notes": "Website chart.js implements drawPie and drawBar only. Pie renderer draws a center hole visually but there is no separate donut mode on the website.",
+    "source": "chart.js"
+  },
+  "export": {
+    "formats": ["PNG", "JPEG", "PDF"],
+    "sizes": ["640x480", "800x600", "1024x768", "1280x720", "1920x1080", "2560x1440", "3840x2160"],
+    "backgrounds": ["White", "Transparent", "Dark"],
+    "saveToPhotos": true,
+    "shareSheet": true,
+    "sources": [
+      "ChartBuilder/ChartBuilder/Features/Export/Models/ExportModels.swift",
+      "ChartBuilder/ChartBuilder/Features/ChartEditor/Views/ChartEditorView.swift"
+    ]
+  },
+  "editing": {
+    "capabilities": [
+      "project title",
+      "add/delete data points",
+      "per-point colors",
+      "18 preset colors",
+      "custom color picker",
+      "Legend toggle",
+      "Values toggle",
+      "Grid toggle",
+      "line color for Line and Area",
+      "radar fill color",
+      "value label color",
+      "fullscreen preview"
+    ],
+    "notSupported": [
+      "axis titles",
+      "manual axis ranges",
+      "fonts",
+      "multiple independent series",
+      "CSV/Excel import",
+      "cloud sync",
+      "accounts"
+    ],
+    "sources": [
+      "ChartBuilder/ChartBuilder/Features/ChartEditor/Views/ChartEditorView.swift"
+    ]
+  },
+  "persistence": {
+    "storage": "UserDefaults JSON local projects",
+    "cloud": false,
+    "accounts": false,
+    "importFormats": [],
+    "sources": ["ChartBuilder/ChartBuilder/Core/Storage/StorageManager.swift"]
+  },
+  "premium": {
+    "products": [
+      { "id": "via.premium.weekly", "label": "VIA Weekly" },
+      { "id": "via.premium.yearly", "label": "VIA Yearly" }
+    ],
+    "freeLimits": {
+      "maxSavedProjects": 1,
+      "maxCustomColors": 3
+    },
+    "proExportOnlyTypes": ["stackedBar", "scatter", "radar", "gantt"],
+    "notes": "Free users can select and edit Pro chart types; export for those types requires Pro.",
+    "sources": [
+      "ChartBuilder/ChartBuilder/Models/ChartModels.swift",
+      "ChartBuilder/ChartBuilder/Core/Subscriptions/SubscriptionManager.swift",
+      "ChartBuilder/ChartBuilder/Features/Paywall/PaywallView.swift"
+    ]
+  },
+  "claimsPolicy": {
+    "neverClaim": [
+      "Excel/CSV import",
+      "browser-to-app data handoff",
+      "automatic continue editing of the same chart across web and app",
+      "spider as a VIA UI label",
+      "multi-series charts",
+      "BI dashboards"
+    ],
+    "accurateWorkflows": [
+      "Type values manually in the browser pie/bar tools",
+      "Re-enter values manually in VIA on iPhone for app chart types",
+      "Export PNG/JPEG/PDF from VIA share sheet"
+    ]
+  }
+}
