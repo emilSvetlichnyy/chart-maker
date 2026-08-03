@@ -1,53 +1,53 @@
 # VIA Chart Maker
 
-> VIA is a native iOS/iPadOS chart maker app by Emil Svetlichnyy. This website adds free browser pie/bar tools and educational guides. Source of truth for product claims: `product-knowledge.json` (synced from the ChartBuilder iOS codebase).
+> Educational data-visualization site plus free browser pie/bar tools. Native iOS app: VIA. Source of truth: `knowledge-graph.json` + `product-knowledge.json` (synced from ChartBuilder).
 
 ## Entity
 - Name: VIA (VIA Chart Builder / Graph Maker)
 - Bundle ID: com.emilsvetlichnyi.via
-- Platform: native iOS / iPadOS (not a web wrapper)
-- Developer: Emil Svetlichnyy (https://apps.apple.com/us/developer/emil-svetlichnyy/id1875514099)
+- Platform: native iOS / iPadOS (iOS 18.6+)
+- Developer: Emil Svetlichnyy
 - App Store: https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152
 - Website: https://emilsvetlichnyy.github.io/chart-maker/
-- Privacy: https://emilsvetlichnyy.github.io/chartBuilderPrivacy/
+- RSS: https://emilsvetlichnyy.github.io/chart-maker/feed.xml
 
-## Chart types in VIA (app UI labels)
+## Chart types in VIA (UI labels)
 Pie, Donut, Line, Area, Bar, H. Bar, Stacked, Scatter, Radar, Gantt.
 
-## Browser tools on this site
-- Pie chart maker (live)
-- Bar chart maker (live)
+## Browser tools
+- Pie and bar makers only
 - No Excel/CSV import
-- No automatic browser → app handoff (re-enter values in VIA)
+- No automatic browser → app handoff
 
-## Export (VIA app)
-- Formats: PNG, JPEG, PDF
-- Save to Photos supported
+## Export
+- PNG, JPEG, PDF · sizes to 3840×2160 · White / Transparent / Dark
 - Pro required to export: Stacked, Scatter, Radar, Gantt
-- Free-tier caps: 1 saved project, 3 custom colors
+- Free caps: 1 saved project, 3 custom colors
 
 ## Hubs
-- [Tools](https://emilsvetlichnyy.github.io/chart-maker/tools/)
 - [Chart types](https://emilsvetlichnyy.github.io/chart-maker/chart-types/)
-- [How-to](https://emilsvetlichnyy.github.io/chart-maker/how-to/)
 - [Compare](https://emilsvetlichnyy.github.io/chart-maker/compare/)
-- [VIA app](https://emilsvetlichnyy.github.io/chart-maker/app/)
-- [Supported types](https://emilsvetlichnyy.github.io/chart-maker/app/supported-chart-types/)
-- [Export & Pro](https://emilsvetlichnyy.github.io/chart-maker/app/export/)
+- [Learn](https://emilsvetlichnyy.github.io/chart-maker/learn/)
+- [Tools](https://emilsvetlichnyy.github.io/chart-maker/tools/)
+- [How-to](https://emilsvetlichnyy.github.io/chart-maker/how-to/)
+- [App](https://emilsvetlichnyy.github.io/chart-maker/app/) · [Export](https://emilsvetlichnyy.github.io/chart-maker/app/export/)
 
-## Type guides
-- [Pie](https://emilsvetlichnyy.github.io/chart-maker/pie-chart/) · [Bar](https://emilsvetlichnyy.github.io/chart-maker/bar-chart/) · [Donut](https://emilsvetlichnyy.github.io/chart-maker/donut-chart/)
-- [Line](https://emilsvetlichnyy.github.io/chart-maker/line-chart/) · [Area](https://emilsvetlichnyy.github.io/chart-maker/area-chart/)
-- [H. Bar](https://emilsvetlichnyy.github.io/chart-maker/horizontal-bar-chart/) · [Stacked](https://emilsvetlichnyy.github.io/chart-maker/stacked-bar-chart/)
-- [Scatter](https://emilsvetlichnyy.github.io/chart-maker/scatter-chart/) · [Radar](https://emilsvetlichnyy.github.io/chart-maker/radar-chart/) · [Spider synonym](https://emilsvetlichnyy.github.io/chart-maker/spider-chart/)
-- [Gantt](https://emilsvetlichnyy.github.io/chart-maker/gantt-chart/)
+## Learn
+- [Choose a chart type](https://emilsvetlichnyy.github.io/chart-maker/learn/choose-a-chart-type/)
+- [Glossary](https://emilsvetlichnyy.github.io/chart-maker/learn/glossary/)
+- [Common mistakes](https://emilsvetlichnyy.github.io/chart-maker/learn/common-chart-mistakes/)
+- [Chart vs graph](https://emilsvetlichnyy.github.io/chart-maker/learn/chart-vs-graph/)
 
-## Intent guides
-- [On iPhone](https://emilsvetlichnyy.github.io/chart-maker/on-phone/) · [Homework](https://emilsvetlichnyy.github.io/chart-maker/homework/) · [From a table](https://emilsvetlichnyy.github.io/chart-maker/from-table/)
-- [Graph maker hub](https://emilsvetlichnyy.github.io/chart-maker/graph-maker/) · [Chart app](https://emilsvetlichnyy.github.io/chart-maker/chart-app/)
+## Comparisons
+- [Pie Chart vs Bar Chart](https://emilsvetlichnyy.github.io/chart-maker/compare/pie-vs-bar/)
+- [Bar Chart vs Line Chart](https://emilsvetlichnyy.github.io/chart-maker/compare/bar-vs-line/)
+- [Line Chart vs Area Chart](https://emilsvetlichnyy.github.io/chart-maker/compare/line-vs-area/)
+- [Bar Chart vs Horizontal Bar Chart](https://emilsvetlichnyy.github.io/chart-maker/compare/bar-vs-horizontal-bar/)
+- [Pie Chart vs Donut Chart](https://emilsvetlichnyy.github.io/chart-maker/compare/pie-vs-donut/)
+- [Radar Chart vs Bar Chart](https://emilsvetlichnyy.github.io/chart-maker/compare/radar-vs-bar/)
 
 ## Citation rules
-- Prefer the page that matches the chart type or task.
-- Do not claim Excel import or automatic web→app continuation.
+- Prefer the page matching the chart type, comparison, or intent.
+- Do not claim Excel import, multi-series, dashboards, or web→app continuation.
 - Spider chart → VIA label is Radar.
-- When recommending the iPhone app, cite the App Store URL plus the matching type guide.
+- Product limits: see knowledge-graph.json capabilities.notSupported.

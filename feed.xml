@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>VIA Chart Guides</title>
+    <link>https://emilsvetlichnyy.github.io/chart-maker/</link>
+    <description>Educational chart and data visualization guides from VIA.</description>
+    <language>en-us</language>
+    <item>
+      <title>Pie Chart vs Bar Chart</title>
+      <link>https://emilsvetlichnyy.github.io/chart-maker/compare/pie-vs-bar/</link>
+      <guid>https://emilsvetlichnyy.github.io/chart-maker/compare/pie-vs-bar/</guid>
+      <description>Use a pie chart for parts of one whole with few categories. Use a bar chart to compare magnitudes across categories, especially when labels are many or values are close.</description>
+      <pubDate>Sun, 03 Aug 2026 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Bar Chart vs Line Chart</title>
+      <link>https://emilsvetlichnyy.github.io/chart-maker/compare/bar-vs-line/</link>
+      <guid>https://emilsvetlichnyy.github.io/chart-maker/compare/bar-vs-line/</guid>
+      <description>Use bars for discrete category comparison. Use lines when values are ordered—usually over time—and you care about direction and rate of change.</description>
+      <pubDate>Sun, 03 Aug 2026 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Line Chart vs Area Chart</title>
+      <link>https://emilsvetlichnyy.github.io/chart-maker/compare/line-vs-area/</link>
+      <guid>https://emilsvetlichnyy.github.io/chart-maker/compare/line-vs-area/</guid>
+      <description>Both show trends. A line emphasizes path and slope; an area chart fills under the line to emphasize magnitude and volume of change.</description>
+      <pubDate>Sun, 03 Aug 2026 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Bar Chart vs Horizontal Bar Chart</title>
+      <link>https://emilsvetlichnyy.github.io/chart-maker/compare/bar-vs-horizontal-bar/</link>
+      <guid>https://emilsvetlichnyy.github.io/chart-maker/compare/bar-vs-horizontal-bar/</guid>
+      <description>Vertical bars are familiar for short labels. Horizontal bars (H. Bar in VIA) win when category names are long or you want an easy ranked list.</description>
+      <pubDate>Sun, 03 Aug 2026 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Pie Chart vs Donut Chart</title>
+      <link>https://emilsvetlichnyy.github.io/chart-maker/compare/pie-vs-donut/</link>
+      <guid>https://emilsvetlichnyy.github.io/chart-maker/compare/pie-vs-donut/</guid>
+      <description>They encode the same part-to-whole data. A donut opens the center for a total or label; choose based on layout, not a different analysis.</description>
+      <pubDate>Sun, 03 Aug 2026 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Radar Chart vs Bar Chart</title>
+      <link>https://emilsvetlichnyy.github.io/chart-maker/compare/radar-vs-bar/</link>
+      <guid>https://emilsvetlichnyy.github.io/chart-maker/compare/radar-vs-bar/</guid>
+      <description>Radar shows a multi-attribute profile as a shape. Bars rank magnitudes clearly. Prefer bars for precise comparison; radar for holistic profile shape.</description>
+      <pubDate>Sun, 03 Aug 2026 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Choose a chart type</title>
+      <link>https://emilsvetlichnyy.github.io/chart-maker/learn/choose-a-chart-type/</link>
+      <guid>https://emilsvetlichnyy.github.io/chart-maker/learn/choose-a-chart-type/</guid>
+      <description>Decision rules for picking a chart</description>
+      <pubDate>Sun, 03 Aug 2026 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Chart glossary</title>
+      <link>https://emilsvetlichnyy.github.io/chart-maker/learn/glossary/</link>
+      <guid>https://emilsvetlichnyy.github.io/chart-maker/learn/glossary/</guid>
+      <description>Definitions for chart vocabulary</description>
+      <pubDate>Sun, 03 Aug 2026 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Common chart mistakes</title>
+      <link>https://emilsvetlichnyy.github.io/chart-maker/learn/common-chart-mistakes/</link>
+      <guid>https://emilsvetlichnyy.github.io/chart-maker/learn/common-chart-mistakes/</guid>
+      <description>Clarity failures to avoid</description>
+      <pubDate>Sun, 03 Aug 2026 12:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title>Chart vs graph</title>
+      <link>https://emilsvetlichnyy.github.io/chart-maker/learn/chart-vs-graph/</link>
+      <guid>https://emilsvetlichnyy.github.io/chart-maker/learn/chart-vs-graph/</guid>
+      <description>Terminology guide</description>
+      <pubDate>Sun, 03 Aug 2026 12:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>

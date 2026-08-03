@@ -181,6 +181,7 @@
       "ChartBuilder/ChartBuilder/Features/Paywall/PaywallView.swift"
     ]
   },
+  "knowledgeGraph": "knowledge-graph.json",
   "claimsPolicy": {
     "neverClaim": [
       "Excel/CSV import",

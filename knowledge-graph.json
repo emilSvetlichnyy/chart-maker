@@ -1,0 +1,513 @@
+{
+  "version": "2.0.0",
+  "verifiedAt": "2026-08-03",
+  "sources": {
+    "product": "../ChartBuilder",
+    "models": "../ChartBuilder/ChartBuilder/Models/ChartModels.swift",
+    "export": "../ChartBuilder/ChartBuilder/Features/Export/Models/ExportModels.swift",
+    "storage": "../ChartBuilder/ChartBuilder/Core/Storage/StorageManager.swift",
+    "claimsPolicy": "product-knowledge.json"
+  },
+  "product": {
+    "id": "via",
+    "name": "VIA",
+    "type": "SoftwareApplication",
+    "platform": ["iOS", "iPadOS"],
+    "minimumOS": "iOS 18.6",
+    "bundleId": "com.emilsvetlichnyi.via",
+    "appStoreUrl": "https://apps.apple.com/us/app/via-chart-builder-graph-maker/id6763495152",
+    "developer": "Emil Svetlichnyy",
+    "developerUrl": "https://apps.apple.com/us/developer/emil-svetlichnyy/id1875514099",
+    "privacyUrl": "https://emilsvetlichnyy.github.io/chartBuilderPrivacy/",
+    "siteBase": "https://emilsvetlichnyy.github.io/chart-maker"
+  },
+  "capabilities": {
+    "exportFormats": ["PNG", "JPEG", "PDF"],
+    "exportSizes": ["640×480", "800×600", "1024×768", "1280×720", "1920×1080", "2560×1440", "3840×2160"],
+    "exportBackgrounds": ["White", "Transparent", "Dark"],
+    "editing": [
+      "title",
+      "data points",
+      "per-point colors",
+      "18 preset colors",
+      "custom color picker",
+      "Legend",
+      "Values",
+      "Grid",
+      "line color (Line/Area)",
+      "radar fill",
+      "value-label color",
+      "fullscreen preview"
+    ],
+    "notSupported": [
+      "CSV/Excel import",
+      "browser↔app data handoff",
+      "multi-series",
+      "axis titles",
+      "manual axis scales",
+      "custom fonts",
+      "cloud sync",
+      "accounts",
+      "dashboards",
+      "analytics"
+    ],
+    "freeLimits": {
+      "maxSavedProjects": 1,
+      "maxCustomColors": 3
+    },
+    "proExportOnly": ["stackedBar", "scatter", "radar", "gantt"],
+    "browserTools": ["pie", "bar"]
+  },
+  "entities": {
+    "chart": {
+      "id": "chart",
+      "kind": "concept",
+      "label": "Chart",
+      "aliases": ["graph", "plot", "visualization"],
+      "definition": "A visual encoding of quantitative data that maps values to position, length, angle, area, or color so readers can compare and interpret numbers faster than from a table alone.",
+      "related": ["bar", "pie", "line", "scatter", "legend", "axis", "export"]
+    },
+    "pie": {
+      "id": "pie",
+      "kind": "chartType",
+      "label": "Pie",
+      "uiLabel": "Pie",
+      "slug": "pie-chart",
+      "aliases": ["pie chart", "pie graph", "circle chart"],
+      "definition": "A circular chart that divides a whole into slices whose angles are proportional to each category’s share of a single total.",
+      "whenToUse": ["Parts of one whole", "3–6 categories", "Budget or survey shares"],
+      "whenNotToUse": ["Comparing magnitudes across groups", "Many tiny slices", "Time series"],
+      "commonMistakes": ["Too many slices", "3D pie distortion", "Using pie when totals differ across groups"],
+      "requiresProExport": false,
+      "browserTool": true,
+      "related": ["donut", "bar", "legend"],
+      "comparesWith": ["bar", "donut"],
+      "intents": ["make pie chart online", "pie vs bar", "how many slices"]
+    },
+    "donut": {
+      "id": "donut",
+      "kind": "chartType",
+      "label": "Donut",
+      "uiLabel": "Donut",
+      "slug": "donut-chart",
+      "aliases": ["donut chart", "doughnut chart"],
+      "definition": "A pie chart with an open center, often used to display a total or KPI in the middle while still showing category shares.",
+      "whenToUse": ["Same jobs as pie", "When a center total helps"],
+      "whenNotToUse": ["Many categories", "Precise magnitude comparison"],
+      "commonMistakes": ["Treating donut as a different analysis than pie", "Overfilling the center with text"],
+      "requiresProExport": false,
+      "browserTool": false,
+      "related": ["pie", "bar"],
+      "comparesWith": ["pie"],
+      "intents": ["donut vs pie", "make donut chart on iPhone"]
+    },
+    "line": {
+      "id": "line",
+      "kind": "chartType",
+      "label": "Line",
+      "uiLabel": "Line",
+      "slug": "line-chart",
+      "aliases": ["line chart", "line graph", "trend chart"],
+      "definition": "A chart that connects ordered values with a line to emphasize change, direction, and rate over a sequence such as time.",
+      "whenToUse": ["Trends over time", "Continuous sequences", "Rate of change"],
+      "whenNotToUse": ["Unordered categories", "Parts of a whole"],
+      "commonMistakes": ["Connecting unordered categories", "Too many overlapping series"],
+      "requiresProExport": false,
+      "browserTool": false,
+      "related": ["area", "bar", "scatter"],
+      "comparesWith": ["area", "bar"],
+      "intents": ["line chart on iPhone", "line vs bar", "line vs area"]
+    },
+    "area": {
+      "id": "area",
+      "kind": "chartType",
+      "label": "Area",
+      "uiLabel": "Area",
+      "slug": "area-chart",
+      "aliases": ["area chart", "filled line chart"],
+      "definition": "A line chart with the region under the line filled to emphasize magnitude of change as well as direction.",
+      "whenToUse": ["Volume over time", "Single series emphasis"],
+      "whenNotToUse": ["Many overlapping series", "Part-to-whole without stacking context"],
+      "commonMistakes": ["Using area for categorical ranking", "Implying cumulative totals incorrectly"],
+      "requiresProExport": false,
+      "browserTool": false,
+      "related": ["line", "bar"],
+      "comparesWith": ["line"],
+      "intents": ["area vs line", "make area chart iPhone"]
+    },
+    "bar": {
+      "id": "bar",
+      "kind": "chartType",
+      "label": "Bar",
+      "uiLabel": "Bar",
+      "slug": "bar-chart",
+      "aliases": ["bar chart", "column chart", "vertical bar"],
+      "definition": "A chart that encodes values as vertical bar lengths so categories can be compared by eye along a shared baseline.",
+      "whenToUse": ["Compare categories", "Rank values", "Many labels that still fit"],
+      "whenNotToUse": ["Parts of one total with few slices (pie may be clearer)", "Dense time series (line may be clearer)"],
+      "commonMistakes": ["Truncated y-axis exaggeration", "Sorting randomly when rank matters"],
+      "requiresProExport": false,
+      "browserTool": true,
+      "related": ["horizontalBar", "stackedBar", "pie", "line"],
+      "comparesWith": ["pie", "line", "horizontalBar"],
+      "intents": ["make bar chart online", "bar vs pie", "bar vs line"]
+    },
+    "horizontalBar": {
+      "id": "horizontalBar",
+      "kind": "chartType",
+      "label": "Horizontal bar",
+      "uiLabel": "H. Bar",
+      "slug": "horizontal-bar-chart",
+      "aliases": ["horizontal bar chart", "H. Bar", "bar graph horizontal"],
+      "definition": "A bar chart with bars drawn horizontally, preferred when category labels are long or ranking needs easy top-to-bottom reading.",
+      "whenToUse": ["Long category names", "Ranked lists", "Survey responses"],
+      "whenNotToUse": ["Short labels where vertical bars are fine"],
+      "commonMistakes": ["Using vertical bars with truncated labels"],
+      "requiresProExport": false,
+      "browserTool": false,
+      "related": ["bar", "stackedBar"],
+      "comparesWith": ["bar"],
+      "intents": ["horizontal vs vertical bar"]
+    },
+    "stackedBar": {
+      "id": "stackedBar",
+      "kind": "chartType",
+      "label": "Stacked bar",
+      "uiLabel": "Stacked",
+      "slug": "stacked-bar-chart",
+      "aliases": ["stacked bar chart", "Stacked"],
+      "definition": "A bar composed of segments that add to a total, used to show composition within categories. In VIA this is a single stack built from points.",
+      "whenToUse": ["Composition inside a total", "Part-to-whole with named segments"],
+      "whenNotToUse": ["Precise segment comparison across many stacks"],
+      "commonMistakes": ["Too many segments", "Expecting true multi-series grouped bars"],
+      "requiresProExport": true,
+      "browserTool": false,
+      "related": ["bar", "pie"],
+      "comparesWith": ["bar", "pie"],
+      "intents": ["stacked bar vs pie", "stacked bar iPhone"]
+    },
+    "scatter": {
+      "id": "scatter",
+      "kind": "chartType",
+      "label": "Scatter",
+      "uiLabel": "Scatter",
+      "slug": "scatter-chart",
+      "aliases": ["scatter chart", "scatter plot", "XY chart"],
+      "definition": "A chart that plots each observation as a point with an X and Y value to reveal correlation, clusters, and outliers.",
+      "whenToUse": ["Relationship between two numeric variables", "Outlier detection"],
+      "whenNotToUse": ["Single categorical ranking", "Parts of a whole"],
+      "commonMistakes": ["Treating scatter like a line without ordered X", "Too few points to claim a pattern"],
+      "requiresProExport": true,
+      "browserTool": false,
+      "related": ["line", "bar"],
+      "comparesWith": ["line"],
+      "intents": ["scatter plot vs line", "make scatter on iPhone"]
+    },
+    "radar": {
+      "id": "radar",
+      "kind": "chartType",
+      "label": "Radar",
+      "uiLabel": "Radar",
+      "slug": "radar-chart",
+      "aliases": ["radar chart", "spider chart", "web chart", "star plot"],
+      "definition": "A multivariate chart that places axes around a center and connects scores into a polygon so profiles can be compared across attributes.",
+      "whenToUse": ["Multi-attribute profiles", "Skill or score comparisons"],
+      "whenNotToUse": ["Many axes", "Precise magnitude ranking across people"],
+      "commonMistakes": ["Assuming spider is a separate VIA type", "Too many axes to read"],
+      "requiresProExport": true,
+      "browserTool": false,
+      "related": ["bar", "spider"],
+      "comparesWith": ["bar"],
+      "intents": ["radar vs bar", "spider chart meaning"]
+    },
+    "gantt": {
+      "id": "gantt",
+      "kind": "chartType",
+      "label": "Gantt",
+      "uiLabel": "Gantt",
+      "slug": "gantt-chart",
+      "aliases": ["gantt chart", "timeline chart", "project schedule chart"],
+      "definition": "A timeline chart that shows tasks as bars spanning start and end dates so schedule overlap and duration are visible.",
+      "whenToUse": ["Project timelines", "Task duration and overlap"],
+      "whenNotToUse": ["Simple category ranking", "Statistical correlation"],
+      "commonMistakes": ["Using gantt for non-date data", "Expecting full PM dependencies"],
+      "requiresProExport": true,
+      "browserTool": false,
+      "related": ["bar", "horizontalBar"],
+      "comparesWith": ["horizontalBar"],
+      "intents": ["gantt on iPhone", "gantt vs timeline"]
+    },
+    "spider": {
+      "id": "spider",
+      "kind": "synonym",
+      "label": "Spider chart",
+      "slug": "spider-chart",
+      "mapsTo": "radar",
+      "note": "Educational synonym. VIA UI label is Radar, not Spider.",
+      "related": ["radar"]
+    },
+    "legend": {
+      "id": "legend",
+      "kind": "concept",
+      "label": "Legend",
+      "aliases": ["chart legend", "key"],
+      "definition": "A key that maps colors or symbols to categories or series so readers can decode the visual encodings in a chart.",
+      "related": ["pie", "donut", "stackedBar", "radar"]
+    },
+    "axis": {
+      "id": "axis",
+      "kind": "concept",
+      "label": "Axis",
+      "aliases": ["x-axis", "y-axis", "chart axis"],
+      "definition": "A reference line that establishes scale and order for plotted values. VIA does not support custom axis titles or manual scale ranges.",
+      "related": ["bar", "line", "scatter"]
+    },
+    "series": {
+      "id": "series",
+      "kind": "concept",
+      "label": "Series",
+      "aliases": ["data series", "dataset series"],
+      "definition": "A set of related values plotted together. VIA supports a single flat series of points, not multiple independent series.",
+      "related": ["chart", "stackedBar"]
+    },
+    "export": {
+      "id": "export",
+      "kind": "productCapability",
+      "label": "Export",
+      "slug": "app/export",
+      "definition": "Saving a chart as PNG, JPEG, or PDF at preset sizes with White, Transparent, or Dark backgrounds, plus share sheet and Save to Photos.",
+      "related": ["via", "png", "pdf"]
+    },
+    "project": {
+      "id": "project",
+      "kind": "productCapability",
+      "label": "Project",
+      "aliases": ["saved chart", "chart project"],
+      "definition": "A locally stored chart document in VIA (title, type, points, toggles, colors) persisted as JSON in UserDefaults. Free tier: one saved project.",
+      "related": ["via", "export"]
+    }
+  },
+  "clusters": [
+    {
+      "id": "chart-types",
+      "label": "Chart types",
+      "hub": "/chart-types/",
+      "entities": ["pie", "donut", "line", "area", "bar", "horizontalBar", "stackedBar", "scatter", "radar", "gantt", "spider"]
+    },
+    {
+      "id": "tools",
+      "label": "Online tools",
+      "hub": "/tools/",
+      "entities": ["pie", "bar"]
+    },
+    {
+      "id": "compare",
+      "label": "Comparisons",
+      "hub": "/compare/",
+      "pages": ["pie-vs-bar", "bar-vs-line", "line-vs-area", "bar-vs-horizontal-bar", "pie-vs-donut", "radar-vs-bar"]
+    },
+    {
+      "id": "learn",
+      "label": "Learn data visualization",
+      "hub": "/learn/",
+      "pages": ["choose-a-chart-type", "glossary", "common-chart-mistakes", "chart-vs-graph"]
+    },
+    {
+      "id": "how-to",
+      "label": "How-to",
+      "hub": "/how-to/",
+      "entities": ["on-phone", "homework", "from-table"]
+    },
+    {
+      "id": "app",
+      "label": "VIA app",
+      "hub": "/app/",
+      "pages": ["supported-chart-types", "export"]
+    },
+    {
+      "id": "education",
+      "label": "Education & homework",
+      "hub": "/homework/",
+      "topics": ["school charts", "presentation charts"]
+    },
+    {
+      "id": "accessibility-color",
+      "label": "Color & accessibility",
+      "status": "planned",
+      "topics": ["color contrast", "colorblind-safe palettes", "labeling over color alone"]
+    },
+    {
+      "id": "business-reporting",
+      "label": "Business reporting",
+      "status": "planned",
+      "topics": ["KPI charts", "executive summaries", "meeting slides"]
+    },
+    {
+      "id": "statistics",
+      "label": "Statistics & science",
+      "status": "planned",
+      "topics": ["correlation vs causation", "distributions", "uncertainty"]
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "pie-vs-bar",
+      "slug": "pie-vs-bar",
+      "a": "pie",
+      "b": "bar",
+      "title": "Pie Chart vs Bar Chart",
+      "quickAnswer": "Use a pie chart for parts of one whole with few categories. Use a bar chart to compare magnitudes across categories, especially when labels are many or values are close.",
+      "decisionRule": "If categories must sum to 100% and you have 3–6 slices, prefer pie (or donut). If you need ranking or precise comparison, prefer bar.",
+      "table": [
+        ["Job", "Pie", "Bar"],
+        ["Part-to-whole", "Strong", "Possible with care"],
+        ["Compare magnitudes", "Weak when close", "Strong"],
+        ["Many categories", "Poor", "Good"],
+        ["Time trends", "Poor", "Fair (line often better)"]
+      ]
+    },
+    {
+      "id": "bar-vs-line",
+      "slug": "bar-vs-line",
+      "a": "bar",
+      "b": "line",
+      "title": "Bar Chart vs Line Chart",
+      "quickAnswer": "Use bars for discrete category comparison. Use lines when values are ordered—usually over time—and you care about direction and rate of change.",
+      "decisionRule": "Ask whether the X dimension is categorical (bar) or sequential/temporal (line).",
+      "table": [
+        ["Job", "Bar", "Line"],
+        ["Category ranking", "Strong", "Weak"],
+        ["Trend over time", "Fair", "Strong"],
+        ["Rate of change", "Weak", "Strong"],
+        ["Sparse categories", "Strong", "Can mislead if connected"]
+      ]
+    },
+    {
+      "id": "line-vs-area",
+      "slug": "line-vs-area",
+      "a": "line",
+      "b": "area",
+      "title": "Line Chart vs Area Chart",
+      "quickAnswer": "Both show trends. A line emphasizes path and slope; an area chart fills under the line to emphasize magnitude and volume of change.",
+      "decisionRule": "Prefer line for clarity with multiple series; prefer area for a single series where filled volume aids storytelling.",
+      "table": [
+        ["Job", "Line", "Area"],
+        ["Trend clarity", "Strong", "Strong"],
+        ["Emphasize volume", "Weak", "Strong"],
+        ["Multiple series", "Better", "Can obscure"],
+        ["Part-to-whole", "No", "No (unless stacked context)"]
+      ]
+    },
+    {
+      "id": "bar-vs-horizontal-bar",
+      "slug": "bar-vs-horizontal-bar",
+      "a": "bar",
+      "b": "horizontalBar",
+      "title": "Bar Chart vs Horizontal Bar Chart",
+      "quickAnswer": "Vertical bars are familiar for short labels. Horizontal bars (H. Bar in VIA) win when category names are long or you want an easy ranked list.",
+      "decisionRule": "If labels wrap or truncate, switch to horizontal bars.",
+      "table": [
+        ["Job", "Bar (vertical)", "H. Bar"],
+        ["Short labels", "Strong", "Strong"],
+        ["Long labels", "Weak", "Strong"],
+        ["Ranking lists", "Good", "Excellent"],
+        ["Time on X", "Common", "Less common"]
+      ]
+    },
+    {
+      "id": "pie-vs-donut",
+      "slug": "pie-vs-donut",
+      "a": "pie",
+      "b": "donut",
+      "title": "Pie Chart vs Donut Chart",
+      "quickAnswer": "They encode the same part-to-whole data. A donut opens the center for a total or label; choose based on layout, not a different analysis.",
+      "decisionRule": "Same data rules as pie. Pick donut when a center KPI helps; otherwise either works.",
+      "table": [
+        ["Job", "Pie", "Donut"],
+        ["Part-to-whole", "Strong", "Strong"],
+        ["Center KPI", "Weak", "Strong"],
+        ["Slice comparison", "Similar", "Similar"],
+        ["Many slices", "Poor", "Poor"]
+      ]
+    },
+    {
+      "id": "radar-vs-bar",
+      "slug": "radar-vs-bar",
+      "a": "radar",
+      "b": "bar",
+      "title": "Radar Chart vs Bar Chart",
+      "quickAnswer": "Radar shows a multi-attribute profile as a shape. Bars rank magnitudes clearly. Prefer bars for precise comparison; radar for holistic profile shape.",
+      "decisionRule": "If readers must compare exact values, use bars. If the story is the overall pattern across attributes, radar can help.",
+      "table": [
+        ["Job", "Radar", "Bar"],
+        ["Multi-attribute profile", "Strong", "Fair"],
+        ["Exact ranking", "Weak", "Strong"],
+        ["Many attributes", "Poor", "Good"],
+        ["Part-to-whole", "No", "Possible"]
+      ]
+    }
+  ],
+  "glossary": [
+    {"term": "Chart", "slug": "chart", "definition": "A visual representation of data using position, length, angle, area, or color."},
+    {"term": "Graph", "slug": "graph", "definition": "In everyday use, often synonymous with chart. In mathematics, a graph can also mean nodes and edges—different from a data chart."},
+    {"term": "Legend", "slug": "legend", "definition": "A key mapping colors or symbols to categories."},
+    {"term": "Axis", "slug": "axis", "definition": "A scaled reference line for plotted values."},
+    {"term": "Series", "slug": "series", "definition": "A set of related values. VIA supports one flat series of points."},
+    {"term": "Data point", "slug": "data-point", "definition": "One observation: typically a label plus numeric value (and X or dates for some types)."},
+    {"term": "Part-to-whole", "slug": "part-to-whole", "definition": "A relationship where categories sum to a single total—classic pie/donut job."},
+    {"term": "Correlation", "slug": "correlation", "definition": "A relationship between two variables visible on a scatter plot; not proof of causation."},
+    {"term": "Export", "slug": "export", "definition": "Saving a chart image or PDF for sharing. VIA supports PNG, JPEG, and PDF."},
+    {"term": "Baseline", "slug": "baseline", "definition": "The zero (or reference) line bars are measured from. Truncating it can exaggerate differences."}
+  ],
+  "intents": [
+    {"id": "make-online", "queryExamples": ["free pie chart maker", "bar chart maker online"], "pages": ["/pie-chart/", "/bar-chart/", "/tools/"]},
+    {"id": "choose-type", "queryExamples": ["which chart should I use", "choose a chart type"], "pages": ["/learn/choose-a-chart-type/", "/chart-types/", "/compare/"]},
+    {"id": "compare-types", "queryExamples": ["pie vs bar", "line vs area"], "pages": ["/compare/"]},
+    {"id": "iphone", "queryExamples": ["make chart on iPhone", "iPhone graph maker"], "pages": ["/on-phone/", "/app/", "/chart-app/"]},
+    {"id": "homework", "queryExamples": ["chart for homework", "school pie chart"], "pages": ["/homework/"]},
+    {"id": "from-table", "queryExamples": ["excel to chart", "google sheets chart phone"], "pages": ["/from-table/"]},
+    {"id": "export", "queryExamples": ["export chart PNG", "save chart to photos"], "pages": ["/app/export/"]},
+    {"id": "glossary", "queryExamples": ["what is a legend in a chart", "chart vs graph"], "pages": ["/learn/glossary/", "/learn/chart-vs-graph/"]},
+    {"id": "mistakes", "queryExamples": ["common chart mistakes", "when not to use pie chart"], "pages": ["/learn/common-chart-mistakes/"]}
+  ],
+  "linking": {
+    "nav": [
+      {"label": "Types", "href": "/chart-types/"},
+      {"label": "Compare", "href": "/compare/"},
+      {"label": "Learn", "href": "/learn/"},
+      {"label": "Tools", "href": "/tools/"}
+    ],
+    "typePageRelated": {
+      "include": ["parentHub", "comparesWith", "relatedTypes", "choose", "export", "app"]
+    },
+    "breadcrumbPatterns": {
+      "type": ["Home", "Chart types", "{label}"],
+      "compare": ["Home", "Compare", "{title}"],
+      "learn": ["Home", "Learn", "{title}"],
+      "app": ["Home", "App", "{title}"]
+    }
+  },
+  "programmaticOpportunities": [
+    {"template": "glossary-term", "estimate": 80, "seed": "glossary + viz concepts"},
+    {"template": "chart-type-example", "estimate": 200, "seed": "type × domain (homework, finance, marketing)"},
+    {"template": "comparison", "estimate": 45, "seed": "pairwise among 10 types"},
+    {"template": "mistake", "estimate": 30, "seed": "common failures per type"},
+    {"template": "industry-use-case", "estimate": 120, "seed": "type × industry"},
+    {"template": "how-to-platform", "estimate": 20, "seed": "iPhone / iPad / Safari workflows"},
+    {"template": "faq-entity", "estimate": 150, "seed": "intent FAQs per entity"}
+  ],
+  "pageTemplate": [
+    "hero",
+    "definition",
+    "quickAnswer",
+    "liveToolIfAvailable",
+    "whenToUse",
+    "comparisonTable",
+    "howTo",
+    "commonMistakes",
+    "limitations",
+    "faq",
+    "related",
+    "softCta"
+  ]
+}
