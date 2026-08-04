@@ -2,6 +2,7 @@ User-agent: *
 Allow: /
 
 Sitemap: https://emilsvetlichnyy.github.io/chart-maker/sitemap.xml
+Sitemap: https://emilsvetlichnyy.github.io/chart-maker/sitemap-index.xml
 
 # AI / search helpers
 # llms.txt: https://emilsvetlichnyy.github.io/chart-maker/llms.txt
